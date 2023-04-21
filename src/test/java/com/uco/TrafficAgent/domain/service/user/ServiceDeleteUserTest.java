@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import static org.mockito.Mockito.when;
 
-public class ServiceDeleteUserTest {
+class ServiceDeleteUserTest {
     
     @Test
     void deleteUserSuccessful(){

@@ -1,12 +1,9 @@
 package com.uco.TrafficAgent.infrastructure.repository.type.adapter.entity;
 
-import com.uco.TrafficAgent.domain.model.TypeIdentification;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-
 @Getter
 @Setter
 @Entity

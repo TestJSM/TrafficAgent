@@ -3,7 +3,6 @@ package com.uco.TrafficAgent.domain.dto;
 import com.uco.TrafficAgent.domain.model.TypeIdentification;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Getter
 @AllArgsConstructor

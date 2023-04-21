@@ -14,7 +14,7 @@ import java.util.List;
 
 import static org.mockito.Mockito.when;
 
-public class ServiceFindListUserTest {
+class ServiceFindListUserTest {
 
     @Test
     void findUserSuccessful(){

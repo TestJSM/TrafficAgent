@@ -9,7 +9,7 @@ import org.mockito.Mockito;
 
 import static org.mockito.Mockito.when;
 
-public class ServiceSaveUserTest {
+class ServiceSaveUserTest {
 
     @Test
     void createUserSuccessful(){
