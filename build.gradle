@@ -1,0 +1,71 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+	id 'jacoco'
+	id "org.sonarqube" version "3.5.0.2730"
+	id "org.owasp.dependencycheck" version "6.5.3"
+}
+apply plugin: 'org.springframework.boot'
+sonarqube {
+	properties {
+    property "sonar.projectKey", "andres.escobar9187_traffic-agent"
+    property "sonar.organization", "andres-escobar9187"
+  }
+}
+
+group = 'com.uco'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation ('org.springframework.boot:spring-boot-starter-web') {
+		exclude module: 'spring-boot-starter-tomcat'
+	}
+
+	implementation 'org.springframework.boot:spring-boot-starter-undertow'
+
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.postgresql:postgresql'
+
+	implementation 'org.springframework.retry:spring-retry:2.0.0'
+
+	testImplementation 'com.h2database:h2:2.1.214'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	compileOnly 'org.projectlombok:lombok:1.18.24'
+	annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+	//implementation 'io.jsonwebtoken:jjwt:0.9.1'
+	//implementation 'com.auth0:java-jwt:4.2.1'
+	implementation 'commons-codec:commons-codec:1.15'
+
+
+	//implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+	implementation 'com.h2database:h2:2.1.214'
+
+	//implementation 'org.springdoc:springdoc-openapi-ui:1.6.13'
+
+	testImplementation 'com.tngtech.archunit:archunit-junit5:1.0.0'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+	finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+	reports {
+		xml.enabled true
+		html.enabled true
+	}
+	additionalSourceDirs files("aplicacion/src/main/java")
+	additionalClassDirs files("aplicacion/build/classes/java/main")
+}
+
