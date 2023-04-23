@@ -32,12 +32,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: ./gradlew sonarqube --info
-      - name: Git Repo Sync
-        uses: wangchucheng/git-repo-sync@v0.1.0
+      - name: GitHub to GitLab Repository Sync
+          # You may pin to the exact commit or the version.
+          # uses: ZetabotCo/github-repository-sync-action@8e1951c32112663800fd9e525d90e7b3cc871386
+        uses: ZetabotCo/github-repository-sync-action@v1.0.0
         with:
-          source: https://github.com/TestJSM/TrafficAgent.git
-          target: https://gitlab.com/traffic-agent/traffic-agent-backend-2023.git
-          # Such as wangchucheng
-          target-username: Traffic Agent
-          # You can store token in your project's 'Setting > Secrets' and reference the name here. Such as ${{ secrets.ACCESS_TOKEN }}
-          target-token: glpat-m-qGCoTXHMW78FdQhgsy
+          source_repo: SantiagoCardenasFranco/https://github.com/TestJSM/TrafficAgent.git
+          target_repo: SantiagoCardenasFranco/https://gitlab.com/traffic-agent/traffic-agent-backend-2023.git
+          source_token: ${{ secrets.GITHUB_TOKEN }}
+          target_token: ${{ secrets.GITHUB_TOKEN }}
