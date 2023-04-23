@@ -42,16 +42,14 @@ jobs:
         
           # Navegar a la carpeta clonada
           cd gitlab-repo
-          
-          git config --global url."git@gitlab.com:".insteadOf "https://gitlab.com"
-        
+                  
           # Configurar git para realizar el envío
           git config --global user.name "SantiagoCardenasFranco"
           git config --global user.email "santicarfranco8@gmail.com"
-        
-          # Agregar y confirmar los cambios
+          git config --global credential.helper "store --file=.git-credentials"
+
+          echo "https://${{ secrets.GITLAB_TOKEN }}@gitlab.com/SantiagoCardenasFranco/Traffic-Agent-Backend 2023.git" > remote_url
           git add .
           git commit -m "Actualizar archivos compilados/emepaquetados"
         
-          # Enviar los cambios a GitLab
           git push origin main
