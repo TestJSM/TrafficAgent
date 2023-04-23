@@ -1,0 +1,19 @@
+name: Gitlab
+
+on:
+  push:
+    branches:
+      - main  
+jobs:
+  transferir_a_gitlab:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Push to GitLab
+      uses: git-actions/gitlab-ci@v4
+      with:
+        gitlab_url: ${{ secrets.GITLAB_URL }}  
+        gitlab_token: ${{ secrets.GITLAB_TOKEN }}  
