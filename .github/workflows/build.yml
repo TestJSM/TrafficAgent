@@ -33,7 +33,12 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: ./gradlew sonarqube --info
       - name: Configurar credenciales de Git
-        run: echo "https://${{ secrets.GITLAB_TOKEN }}@gitlab.com" > .git-credentials
+        run: |
+          git config --global user.name "Nombre de usuario"
+          git config --global user.email "correo@example.com"
+          git config --global credential.helper store
+          git config --global credential.helper "store --file=.git-credentials"
+          echo "https://${{ secrets.GITLAB_TOKEN }}@gitlab.com" > .git-credentials
       
       - name: Agregar URL remota de GitLab
         run: git remote add gitlab https://gitlab.com/traffic-agent/traffic-agent-backend-2023.git
