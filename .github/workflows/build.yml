@@ -32,17 +32,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: ./gradlew sonarqube --info
-      - name: Configurar claves SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "$GITLAB_SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          echo "$GITLAB_SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
-          chmod 644 ~/.ssh/known_hosts
-        
-      - name: Publicar en GitLab
-        run: |
-          git remote -v
-          git remote remove origin
-          git remote add origin git@gitlab.com:traffic-agent/traffic-agent-backend-2023.git
-          git push origin main
+      - name: Git Repo Sync
+        uses: wangchucheng/git-repo-sync@v0.1.0
+        with:
+          # Target Repo UR
+          target-url: https://gitlab.com/traffic-agent/traffic-agent-backend-2023.git
+          target-username: SantiagoCardenasFranco
+          target-token: glpat-m-qGCoTXHMW78FdQhgsy
