@@ -33,7 +33,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: ./gradlew sonarqube --info
       - name: Push to GitLab
-        uses: git-actions/gitlab-ci@v4
         with:
           gitlab_url: ${{ secrets.GITLAB_URL }}  
           gitlab_token: ${{ secrets.GITLAB_TOKEN }}  
