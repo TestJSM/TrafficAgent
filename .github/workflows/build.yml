@@ -36,4 +36,4 @@ jobs:
         uses: git-actions/gitlab-ci@v4
         with:
           gitlab_url: ${{ secrets.GITLAB_URL }}  
-          gitlab_token: ${{ secrets.GITLAB_TOKEN }}
+          gitlab_token: ${{ secrets.GITLAB_TOKEN }}  
