@@ -42,4 +42,4 @@ jobs:
           # Target Repo Username
           target-username: SantiagoCardenasFranco
           # Target Token
-          target_token: ${{ secrets.GITHUB_TOKEN }}#glpat-m-qGCoTXHMW78FdQhgsy
+          target_token: glpat-m-qGCoTXHMW78FdQhgsy
