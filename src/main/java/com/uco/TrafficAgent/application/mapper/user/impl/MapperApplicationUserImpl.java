@@ -16,7 +16,7 @@ public class MapperApplicationUserImpl implements MapperApplicationObject<DtoSav
     private RepositoryTypeId repositoryTypeId;
 
     @Override
-    public User mapperUserToDomain(DtoSaveUser dto) {
+    public User mapperDtoToDomain(DtoSaveUser dto) {
         return User.createUser(dto.getIdentification(), dto.getFullName(), dto.getCellphone(),
                 dto.getPassword(),
                 this.repositoryTypeId.getType(dto.getType()));

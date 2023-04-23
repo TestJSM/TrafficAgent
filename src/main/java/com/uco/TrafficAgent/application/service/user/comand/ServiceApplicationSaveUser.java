@@ -25,6 +25,6 @@ public class ServiceApplicationSaveUser {
         ValidatorAttributes.sizePassword(dto.getPassword(), "La contarseña no cumple con el tamaño requerido");
         ValidatorAttributes.specialCharactersPassword(dto.getPassword(), "La contarseña no es permitida");
         dto.setPassword(this.serviceEncryptedPassword.execute(dto.getPassword()));
-        this.serviceSaveUser.executeSave(this.mapperApplicationUser.mapperUserToDomain(dto));
+        this.serviceSaveUser.executeSave(this.mapperApplicationUser.mapperDtoToDomain(dto));
     }
 }
