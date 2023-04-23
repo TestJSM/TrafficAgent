@@ -34,8 +34,8 @@ jobs:
         run: ./gradlew sonarqube --info
       - name: Configurar credenciales de Git
         run: |
-          git config --global user.name "Nombre de usuario"
-          git config --global user.email "correo@example.com"
+          git config --global user.name "SantiagoCardenasFranco"
+          git config --global user.email "santicarfranco8@gmail.com"
           git config --global credential.helper store
           git config --global credential.helper "store --file=.git-credentials"
           echo "https://${{ secrets.GITLAB_TOKEN }}@gitlab.com" > .git-credentials
