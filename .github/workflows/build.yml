@@ -32,16 +32,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: ./gradlew sonarqube --info
-      - name: Configurar credenciales de Git
-        run: |
-          git config --global user.name "SantiagoCardenasFranco"
-          git config --global user.email "santicarfranco8@gmail.com"
-          echo "${{ secrets.GITLAB_TOKEN }}" > gitlab_token
-          git config --global credential.helper 'store --file=gitlab_token'
-          
-      - name: Enviar cambios a GitLab
-        run: |
-          git remote rename origin old-origin
-          git remote add origin https://gitlab.com/traffic-agent/traffic-agent-backend-2023.git
-          git push -u origin --all
-          git push -u origin --tags
