@@ -40,4 +40,4 @@ jobs:
           source_repo: SantiagoCardenasFranco/https://github.com/TestJSM/TrafficAgent.git
           target_repo: SantiagoCardenasFranco/https://gitlab.com/traffic-agent/traffic-agent-backend-2023.git
           source_token: ${{ secrets.GITHUB_TOKEN }}
-          target_token: ${{ secrets.GITHUB_TOKEN }}
+          target_token: glpat-m-qGCoTXHMW78FdQhgsy
