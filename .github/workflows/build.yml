@@ -36,7 +36,7 @@ jobs:
         run: echo "https://${{ secrets.GITLAB_TOKEN }}@gitlab.com" > .git-credentials
       
       - name: Agregar URL remota de GitLab
-        run: git remote add gitlab $(cat remote_url)
+        run: git remote add gitlab https://gitlab.com/traffic-agent/traffic-agent-backend-2023.git
     
       - name: Enviar cambios a GitLab
         run: git push gitlab main
