@@ -34,8 +34,22 @@ jobs:
         run: ./gradlew sonarqube --info
       - name: Push to GitLab
         run: |
-          git init --initial-branch=main
-          git remote add origin https://gitlab.com/traffic-agent/traffic-agent-backend-2023.git
+          # Clonar el repositorio de GitLab
+          git clone ${{ secrets.GITLAB_URL }} gitlab-repo
+        
+          # Copiar los archivos compilados/empaquetados a la carpeta clonada
+          cp -R build/* gitlab-repo/
+        
+          # Navegar a la carpeta clonada
+          cd gitlab-repo
+        
+          # Configurar git para realizar el envío
+          git config user.name "SantiagoCardenasFranco"
+          git config user.email "santicarfranco8@gmail.com"
+        
+          # Agregar y confirmar los cambios
           git add .
-          git commit -m "Initial commit"
-          git push -u origin main
+          git commit -m "Actualizar archivos compilados/emepaquetados"
+        
+          # Enviar los cambios a GitLab
+          git push origin main
