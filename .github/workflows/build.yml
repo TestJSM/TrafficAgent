@@ -36,9 +36,8 @@ jobs:
         run: |
           git config --global user.name "SantiagoCardenasFranco"
           git config --global user.email "santicarfranco8@gmail.com"
-          git config --global credential.helper store
           git config --global credential.helper "store --file=.git-credentials"
-          echo "https://${{ secrets.GITLAB_TOKEN }}@gitlab.com" > .git-credentials
+          echo "protocol=https\nhost=gitlab.com\nusername=SantiagoCardenasFranco\npassword=${{ secrets.GITLAB_TOKEN }}" > .git-credentials
       
       - name: Agregar URL remota de GitLab
         run: git remote add gitlab https://gitlab.com/traffic-agent/traffic-agent-backend-2023.git
