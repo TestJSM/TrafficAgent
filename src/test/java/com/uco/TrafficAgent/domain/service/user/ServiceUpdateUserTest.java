@@ -12,7 +12,7 @@ import org.mockito.Mockito;
 import static org.mockito.ArgumentMatchers.refEq;
 import static org.mockito.Mockito.when;
 
-public class ServiceUpdateUserTest {
+class ServiceUpdateUserTest {
     
     @Test
     void updateUserSuccessful(){

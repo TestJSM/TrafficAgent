@@ -3,6 +3,7 @@ package com.uco.TrafficAgent.infrastructure.repository.user.adapter.repository;
 import com.uco.TrafficAgent.domain.dto.DtoUserSummary;
 import com.uco.TrafficAgent.domain.model.TypeIdentification;
 import com.uco.TrafficAgent.domain.model.User;
+import com.uco.TrafficAgent.domain.port.user.RepositoryUser;
 import com.uco.TrafficAgent.infrastructure.mapper.user.impl.MapperUserImpl;
 import com.uco.TrafficAgent.infrastructure.repository.type.adapter.entity.EntityTypeId;
 import com.uco.TrafficAgent.infrastructure.repository.type.adapter.repository.jpa.RepositoryTypeIdJpa;
@@ -13,12 +14,12 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class RepositoryUser implements com.uco.TrafficAgent.domain.port.user.RepositoryUser {
+public class RepositoryUserDB implements RepositoryUser {
     private final RepositoryUserJpa repositoryUserJpa;
     private final RepositoryTypeIdJpa repositoryTypeIdJpa;
     private final MapperUserImpl mapperUser;
 
-    public RepositoryUser(RepositoryUserJpa repositoryUserJpa, RepositoryTypeIdJpa repositoryTypeIdJpa, MapperUserImpl mapperUser) {
+    public RepositoryUserDB(RepositoryUserJpa repositoryUserJpa, RepositoryTypeIdJpa repositoryTypeIdJpa, MapperUserImpl mapperUser) {
         this.repositoryUserJpa = repositoryUserJpa;
         this.repositoryTypeIdJpa = repositoryTypeIdJpa;
         this.mapperUser = mapperUser;
