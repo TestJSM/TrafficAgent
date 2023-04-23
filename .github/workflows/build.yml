@@ -42,5 +42,5 @@ jobs:
         
       - name: Publicar en GitLab
         run: |
-          git remote add gitlab git@gitlab.com:<usuario>/<repositorio>.git
-          git push gitlab main
+          git remote add origin git@gitlab.com:traffic-agent/traffic-agent-backend-2023.git
+          git push origin main
