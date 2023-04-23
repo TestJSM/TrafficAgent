@@ -44,8 +44,8 @@ jobs:
           cd gitlab-repo
         
           # Configurar git para realizar el envío
-          git config user.name "SantiagoCardenasFranco"
-          git config user.email "santicarfranco8@gmail.com"
+          git config --global user.name "SantiagoCardenasFranco"
+          git config --global user.email "santicarfranco8@gmail.com"
         
           # Agregar y confirmar los cambios
           git add .
