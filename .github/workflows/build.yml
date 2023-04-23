@@ -39,8 +39,10 @@ jobs:
           echo "${{ secrets.GITLAB_TOKEN }}" > gitlab_token
           git config --global credential.helper 'store --file=gitlab_token'
           
-      - name: Agregar URL remota de GitLab
-        run: git remote add gitlab https://gitlab.com/traffic-agent/traffic-agent-backend-2023.git
-    
       - name: Enviar cambios a GitLab
-        run: git push gitlab main
+        run: |
+          git init --initial-branch=main
+          git remote add origin https://gitlab.com/traffic-agent/traffic-agent-backend-2023.git
+          git add .
+          git commit -m "Initial commit"
+          git push -u origin main
