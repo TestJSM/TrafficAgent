@@ -75,7 +75,7 @@ public class RepositoryUserDB implements RepositoryUser {
             return null;
         }
 
-        return this.mapperUser.mapperUserToDomain(entityUser);
+        return this.mapperUser.mapperEntityToDomain(entityUser);
     }
 
     @Override
@@ -86,6 +86,6 @@ public class RepositoryUserDB implements RepositoryUser {
             return null;
         }
 
-        return this.mapperUser.mapperUserToDomain(entityUser);
+        return this.mapperUser.mapperEntityToDomain(entityUser);
     }
 }

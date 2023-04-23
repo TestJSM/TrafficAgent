@@ -2,6 +2,6 @@ package com.uco.TrafficAgent.infrastructure.mapper;
 
 public interface MapperInfrastructureObject<E, D>{
 
-    D mapperUserToDomain(E entity);
-    E mapperUserToEntity(D domain);
+    D mapperEntityToDomain(E entity);
+    E mapperDomainToEntity(D domain);
 }

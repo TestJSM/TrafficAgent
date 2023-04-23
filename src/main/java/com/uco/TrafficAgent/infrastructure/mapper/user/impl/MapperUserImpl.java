@@ -11,14 +11,14 @@ import org.springframework.context.annotation.Configuration;
 public class MapperUserImpl implements MapperInfrastructureObject<EntityUser, User> {
 
     @Override
-    public User mapperUserToDomain(EntityUser entity) {
+    public User mapperEntityToDomain(EntityUser entity) {
         return User.createUser(entity.getIdentification(), entity.getFullName(),
                 entity.getCellphone(), entity.getPassword(),
                 TypeIdentification.creationType(entity.getEntityTypeId().getType()));
     }
 
     @Override
-    public EntityUser mapperUserToEntity(User domain) {
+    public EntityUser mapperDomainToEntity(User domain) {
         return new EntityUser(domain.getIdentification(), domain.getFullName(), domain.getCellphone(),
                 domain.getPassword(), new EntityTypeId(domain.getTypeIdentification().getType()));
     }
