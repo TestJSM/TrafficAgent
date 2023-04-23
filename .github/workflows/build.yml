@@ -32,3 +32,20 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: ./gradlew sonarqube --info
+      - name: Publicar en GitLab
+        run: |
+          # Clonar el repositorio en GitLab
+          git clone https://gitlab.com/traffic-agent/traffic-agent-backend-2023.git
+          cd $(basename https://gitlab.com/traffic-agent/traffic-agent-backend-2023.git)
+
+          # Realizar cambios en el repositorio
+          # Aquí puedes agregar comandos para hacer cambios en el repositorio antes de publicar
+
+          # Configurar el nombre de usuario y correo electrónico de Git
+          git config --global user.name "SantiagoCardenasFranco"
+          git config --global user.email "santicarfranco8@gmail.com"
+
+          # Realizar la publicación en GitLab
+          git add .
+          git commit -m "Publicar cambios"
+          git push origin main
