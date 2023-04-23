@@ -32,16 +32,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: ./gradlew sonarqube --info
-      - name: Instalar Git
-        run: sudo apt-get update && sudo apt-get install git -y
-      - name: Gitlab
+      - name: Configurar claves SSH
         run: |
-          git config --global user.name "SantiagoCardenasFranco"
-          git config --global user.email "santicarfranco8@gmail.com"
-          git clone https://gitlab.com/traffic-agent/traffic-agent-backend-2023.git
-          cd traffic-agent-backend-2023
-          git switch -c main
-          touch READMEGITLAB.md
-          git add .
-          git commit -m "Gitlab"
-          git push -u origin main
+          mkdir -p ~/.ssh
+          echo "$GITLAB_SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          echo "$GITLAB_SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+        
+      - name: Publicar en GitLab
+        run: |
+          git remote add gitlab git@gitlab.com:<usuario>/<repositorio>.git
+          git push gitlab main
