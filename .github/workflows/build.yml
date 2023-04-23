@@ -32,12 +32,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: ./gradlew sonarqube --info
-      - name: Credentials
-        run: |
-          # Clonar el repositorio en GitLab
-          git clone https://gitlab.com/traffic-agent/traffic-agent-backend-2023.git
-          cd $(basename https://gitlab.com/traffic-agent/traffic-agent-backend-2023.git)
-          
       - name: Gitlab
         run: |
           git config --global user.name "SantiagoCardenasFranco"
