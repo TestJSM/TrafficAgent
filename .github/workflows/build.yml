@@ -36,6 +36,11 @@ jobs:
         uses: wangchucheng/git-repo-sync@v0.1.0
         with:
           # Target Repo UR
-          target-url: https://gitlab.com/traffic-agent/traffic-agent-backend-2023.git
-          target-username: SantiagoCardenasFranco
-          target-token: glpat-m-qGCoTXHMW78FdQhgsy
+          src-repo: https://github.com/TestJSM/TrafficAgent.git
+          dst-repo: https://gitlab.com/traffic-agent/traffic-agent-backend-2023.git
+          dst-token: glpat-m-qGCoTXHMW78FdQhgsy
+          dst-branch: main
+          sync-tags: true
+          sync-readme: true
+          sync-wiki: true
+          sync-releases: true
