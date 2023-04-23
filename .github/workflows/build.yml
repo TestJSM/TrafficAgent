@@ -37,6 +37,8 @@ jobs:
       - name: Git Repo Sync
         uses: wangchucheng/git-repo-sync@v0.1.0
         with:
+          source-branch: main
+          target-branch: dev
           target-url: ${{ secrets.GITLAB_URL }}
           target-username: ${{ secrets.GITLAB_USERNAME }}
           target-token: ${{ secrets.GITLAB_TOKEN }}
