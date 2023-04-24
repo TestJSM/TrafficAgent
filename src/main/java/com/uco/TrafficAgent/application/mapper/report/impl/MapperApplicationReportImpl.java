@@ -21,6 +21,7 @@ public class MapperApplicationReportImpl implements MapperApplicationObject<DtoS
     public Report mapperDtoToDomain(DtoSaveReport dto) {
         return Report.createReport(dto.getLatitud(), dto.getLongitud(), dto.getDescription(),
                 dto.getUrl(),
-                this.repositoryUser.consultUserByIdentification(dto.getIdUser()));
+                this.repositoryUser.consultUserByIdentification(dto.getIdUser()),
+                dto.getDateReport());
     }
 }

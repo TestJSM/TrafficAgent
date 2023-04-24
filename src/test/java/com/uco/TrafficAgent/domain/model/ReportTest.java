@@ -5,6 +5,8 @@ import com.uco.TrafficAgent.domain.testdatabuilder.model.UserTestDataBuilder;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
+
 public class ReportTest {
 
     @Test
@@ -18,6 +20,7 @@ public class ReportTest {
         Assertions.assertEquals("1234567890", report.getUser().getIdentification());
         Assertions.assertEquals("123456789", report.getUser().getCellphone());
         Assertions.assertEquals("w6Unpo<code>t0d0", report.getUser().getPassword());
+        Assertions.assertEquals(LocalDate.now(), report.getDateReport());
         Assertions.assertEquals("C.C", report.getUser().getTypeIdentification().getType());
     }
 

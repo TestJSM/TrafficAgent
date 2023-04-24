@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -15,4 +17,6 @@ public class DtoSaveReport {
     private String description;
     private String url;
     private String idUser;
+    private LocalDate dateReport;
+
 }
