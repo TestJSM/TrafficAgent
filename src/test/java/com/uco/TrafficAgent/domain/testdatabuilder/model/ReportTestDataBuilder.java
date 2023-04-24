@@ -3,12 +3,16 @@ package com.uco.TrafficAgent.domain.testdatabuilder.model;
 import com.uco.TrafficAgent.domain.model.Report;
 import com.uco.TrafficAgent.domain.model.User;
 
+import java.time.LocalDate;
+
 public class ReportTestDataBuilder {
     private double latitud;
     private double longitud;
     private String description;
     private String url;
     private User user;
+
+    private LocalDate dateReport;
 
     public ReportTestDataBuilder byDefault() {
 
@@ -17,6 +21,7 @@ public class ReportTestDataBuilder {
         this.description = "Esta es una decripción";
         this.url = "Url de prueba";
         this.user = new UserTestDataBuilder().byDefault().build();
+        this.dateReport = LocalDate.now();
         return this;
     }
 
@@ -45,7 +50,12 @@ public class ReportTestDataBuilder {
         return this;
     }
 
+    public ReportTestDataBuilder withDate(LocalDate dateReport){
+        this.dateReport = dateReport;
+        return this;
+    }
+
     public Report build() {
-        return Report.createReport(latitud, longitud, description, url,user);
+        return Report.createReport(latitud, longitud, description, url,user, dateReport);
     }
 }

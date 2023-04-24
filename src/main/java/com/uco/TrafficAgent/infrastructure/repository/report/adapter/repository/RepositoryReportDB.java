@@ -27,14 +27,15 @@ public class RepositoryReportDB implements RepositoryReport {
         List<EntityReport> entities = this.repositoryReportJpa.findByIdentification(idUser);
         return entities.stream().map(entity -> new DtoReportSummary(
                 entity.getLatitud(), entity.getLongitud(), entity.getDescription(), entity.getUrl(),
-                entity.getEntityUser().getIdentification())).toList();
+                entity.getEntityUser().getIdentification(),
+                entity.getDateReport())).toList();
     }
 
     @Override
     public void saveReport(Report report) {
         EntityUser entityUser = this.repositoryUserJpa.findByIdentification(report.getUser().getIdentification());
         EntityReport entityReport = new EntityReport(report.getLatitud(), report.getLongitud(),
-                report.getDescription(), report.getUrl(), entityUser);
+                report.getDescription(), report.getUrl(), report.getDateReport(),entityUser);
 
         this.repositoryReportJpa.save(entityReport);
     }
