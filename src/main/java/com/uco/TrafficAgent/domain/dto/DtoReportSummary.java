@@ -10,5 +10,5 @@ public class DtoReportSummary {
     private  double longitud;
     private  String description;
     private  String url;
-    private  String userName;
+    private  String idUser;
 }

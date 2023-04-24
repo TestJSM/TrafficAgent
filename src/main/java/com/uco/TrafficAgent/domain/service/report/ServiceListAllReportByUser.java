@@ -7,6 +7,7 @@ import com.uco.TrafficAgent.domain.port.report.RepositoryReport;
 import java.util.List;
 
 public class ServiceListAllReportByUser {
+
     private final RepositoryReport repositoryReport;
 
     public ServiceListAllReportByUser(RepositoryReport repositoryReport) {
@@ -14,11 +15,12 @@ public class ServiceListAllReportByUser {
     }
 
     public List<DtoReportSummary> executeListAll(String idUser){
-        List<DtoReportSummary> report = this.repositoryReport.listReportByUser(idUser);
-        if(report.isEmpty()){
-            throw new IllegalStateException("No tiene reportes");
+        List<DtoReportSummary> reports = this.repositoryReport.listReportByUser(idUser);
+        if(reports.isEmpty()){
+            throw new IllegalStateException("No hay reportes asociados al usuario " + idUser);
         }else {
-            return report;
+            return reports;
         }
     }
+
 }
