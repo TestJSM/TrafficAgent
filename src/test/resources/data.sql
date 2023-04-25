@@ -8,3 +8,12 @@ INSERT INTO public.users(identification, cellphone, full_name, password, type_id
 
 INSERT INTO public.users(identification, cellphone, full_name, password, type_identification)
 	VALUES ('34646768', '345679098', 'Nomble 2', 'w1Unpo<code>t0d0', 2);
+
+INSERT INTO public.contacts(id, description, latitud, longitud, name, number_phone, identification)
+    VALUES(30, 'Descripción', 12.2345, 54.234, 'Name', '123456789', '123456789');
+
+INSERT INTO public.contacts(id, description, latitud, longitud, name, number_phone, identification)
+    VALUES(60, 'Descripción', 12.2345, 54.234, 'Name Dos', '8765567', '123456789');
+
+INSERT INTO public.contacts(id, description, latitud, longitud, name, number_phone, identification)
+    VALUES(90, 'Descripción', 12.2345, 54.234, 'Name Tres', '987654', '123456789');
