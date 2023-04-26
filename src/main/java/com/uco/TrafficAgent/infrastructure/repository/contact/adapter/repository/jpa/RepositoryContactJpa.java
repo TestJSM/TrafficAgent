@@ -16,7 +16,8 @@ public interface RepositoryContactJpa extends JpaRepository<EntityContact, Integ
     @Query(value = "SELECT * FROM contacts " +
             "WHERE identification = :id AND" +
             "(latitud - :valueLat > -20.0 AND latitud - :valueLat < 20.0) " +
-            "AND (longitud - :valueLon > -20.0 AND longitud - :valueLon < 20.0)",
+            "AND (longitud - :valueLon > -20.0 AND longitud - :valueLon < 20.0) " +
+            "ORDER BY latitud - :valueLat ASC, longitud - :valueLon ASC",
             nativeQuery = true)
     List<EntityContact> findContactsByLatLong(@Param("valueLat") double valueLat,
                                               @Param("valueLon") double valueLon,
