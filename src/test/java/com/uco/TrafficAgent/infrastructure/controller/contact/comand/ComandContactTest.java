@@ -54,9 +54,9 @@ class ComandContactTest {
     }
 
     @Test
-    void noCreateContactBecauseItWasAlreadyCreatedWhitSameName() throws Exception {
+    void noCreateContactBecauseItWasAlreadyCreatedWhitSameNumberPhone() throws Exception {
         DtoSaveContact comandUserTestsDataBuilder = new ComandContactTestDataBuilder()
-                .byDefault().withNumberPhone("123456789").build();
+                .byDefault().withNumberPhone("8765567").build();
 
         mocMvc.perform(post("/contact/save")
                         .contentType(MediaType.APPLICATION_JSON)

@@ -10,12 +10,14 @@ public class DtoContactSummaryTestDataBuilder {
     private String name;
     private String description;
     private String numberPhone;
+    private double distancia;
 
     public DtoContactSummaryTestDataBuilder byDefault() {
 
         this.name = "Nombre";
         this.description = "Descripción";
         this.numberPhone = "123456789";
+        this.distancia = 0.0;
         return this;
     }
 
@@ -34,7 +36,13 @@ public class DtoContactSummaryTestDataBuilder {
         return this;
     }
 
+
+    public DtoContactSummaryTestDataBuilder withDistancia(double distancia){
+        this.distancia = distancia;
+        return this;
+    }
+
     public DtoContactSummary build() {
-        return new DtoContactSummary(name, description, numberPhone);
+        return new DtoContactSummary(name, description, numberPhone, distancia);
     }
 }

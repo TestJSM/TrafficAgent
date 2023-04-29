@@ -15,5 +15,6 @@ public class DtoContactSummaryTest {
         Assertions.assertEquals("Descripción", dto.getDescription());
         Assertions.assertEquals("Nombre", dto.getName());
         Assertions.assertEquals("123456789", dto.getNumberPhone());
+        Assertions.assertEquals(0.0, dto.getDistancia());
     }
 }

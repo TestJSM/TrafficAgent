@@ -38,12 +38,12 @@ class ConsultContactByProximityTests {
 
     @Test
     void consultAllContact() throws  Exception{
-        mocMvc.perform(get("/contact/list/all/123456789?latitud=10.0&longitud=50.0")
+        mocMvc.perform(get("/contact/list/all/123456789?latitud=6.148814&longitud=-75.375843")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().is2xxSuccessful())
-                .andExpect(jsonPath("$[0].numberPhone", is("123456789")))
-                .andExpect(jsonPath("$[1].numberPhone", is("8765567")))
-                .andExpect(jsonPath("$[2].numberPhone", is("987654")));
+                .andExpect(jsonPath("$[0].numberPhone", is("9876543000")))
+                .andExpect(jsonPath("$[1].numberPhone", is("123456789")))
+                .andExpect(jsonPath("$[2].numberPhone", is("8765567")));
     }
 
     @Test
