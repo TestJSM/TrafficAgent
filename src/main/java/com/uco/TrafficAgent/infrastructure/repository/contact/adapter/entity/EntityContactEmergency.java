@@ -16,8 +16,11 @@ public class EntityContactEmergency {
     private Integer id;
     private double latitud;
     private double longitud;
+    @Column(name = "name_contact")
     private String name;
     private String description;
+    @Column(nullable = true)
+    private double distancia;
     @Column(name = "number_phone", unique = true)
     private String numberPhone;
 }

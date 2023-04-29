@@ -16,14 +16,18 @@ public class EntityContact {
     private Integer id;
     private double latitud;
     private double longitud;
+    @Column(name = "name_contact")
     private String name;
     private String description;
     @Column(name = "number_phone", unique = true)
     private String numberPhone;
 
+    @Column(nullable = true)
+    private double distancia;
     @ManyToOne
     @JoinColumn(name = "identification")
     private EntityUser entityUser;
+
 
     public EntityContact() {
     }

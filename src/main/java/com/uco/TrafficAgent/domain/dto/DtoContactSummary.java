@@ -10,4 +10,5 @@ public class DtoContactSummary {
     private final String name;
     private final String description;
     private final String numberPhone;
+    private final double distancia;
 }

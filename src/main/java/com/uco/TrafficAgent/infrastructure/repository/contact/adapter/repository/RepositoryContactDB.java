@@ -12,7 +12,9 @@ import com.uco.TrafficAgent.infrastructure.repository.user.adapter.repository.jp
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 public class RepositoryContactDB implements RepositoryContact {
@@ -38,19 +40,23 @@ public class RepositoryContactDB implements RepositoryContact {
         List<DtoContactSummary> listAllContacts = new ArrayList<>();
 
 
-        List<EntityContactEmergency> contactEmergencies = this.repositoryContactEmergencyJpa.findAll();
+        List<EntityContactEmergency> contactEmergencies = this.repositoryContactEmergencyJpa.findContactsByLatLong(latitude, longitude);
         List<DtoContactSummary> contactEmergency = contactEmergencies.stream().map(entity -> new DtoContactSummary(entity.getName(),
-                entity.getDescription(), entity.getNumberPhone())).toList();
+                entity.getDescription(), entity.getNumberPhone(), entity.getDistancia())).toList();
 
 
         List<EntityContact> entities = this.repositoryContactJpa.findContactsByLatLong(latitude, longitude, id);
         List<DtoContactSummary> contact = entities.stream().map(entity -> new DtoContactSummary(entity.getName(),
-                entity.getDescription(), entity.getNumberPhone())).toList();
+                entity.getDescription(), entity.getNumberPhone(), entity.getDistancia())).toList();
 
         listAllContacts.addAll(contact);
         listAllContacts.addAll(contactEmergency);
 
-        return listAllContacts;
+        List<DtoContactSummary> summaryList = listAllContacts.stream()
+                .sorted(Comparator.comparingDouble(DtoContactSummary::getDistancia))
+                .toList();
+
+        return summaryList;
     }
 
     @Override
