@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.uco.TrafficAgent.domain.service.user.ServiceFindListUserTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-04-30T20:17:50" hostname="DESKTOP-LLM13DE" time="0.032">
+<testsuite name="com.uco.TrafficAgent.domain.service.user.ServiceFindListUserTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-04-30T21:04:39" hostname="DESKTOP-LLM13DE" time="0.005">
   <properties/>
-  <testcase name="noFindUser()" classname="com.uco.TrafficAgent.domain.service.user.ServiceFindListUserTest" time="0.03"/>
+  <testcase name="noFindUser()" classname="com.uco.TrafficAgent.domain.service.user.ServiceFindListUserTest" time="0.003"/>
   <testcase name="findUserSuccessful()" classname="com.uco.TrafficAgent.domain.service.user.ServiceFindListUserTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

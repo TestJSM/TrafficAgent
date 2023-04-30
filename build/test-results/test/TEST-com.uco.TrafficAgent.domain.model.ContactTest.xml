@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.uco.TrafficAgent.domain.model.ContactTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2023-04-30T20:17:49" hostname="DESKTOP-LLM13DE" time="0.011">
+<testsuite name="com.uco.TrafficAgent.domain.model.ContactTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2023-04-30T21:04:38" hostname="DESKTOP-LLM13DE" time="0.014">
   <properties/>
-  <testcase name="validateFieldNumberPhoneNoContainsNumber()" classname="com.uco.TrafficAgent.domain.model.ContactTest" time="0.003"/>
-  <testcase name="validateFieldUserNull()" classname="com.uco.TrafficAgent.domain.model.ContactTest" time="0.0"/>
-  <testcase name="validateFieldsMissingName()" classname="com.uco.TrafficAgent.domain.model.ContactTest" time="0.0"/>
-  <testcase name="validateFieldsMissingNumberPhone()" classname="com.uco.TrafficAgent.domain.model.ContactTest" time="0.0"/>
+  <testcase name="validateFieldNumberPhoneNoContainsNumber()" classname="com.uco.TrafficAgent.domain.model.ContactTest" time="0.004"/>
+  <testcase name="validateFieldUserNull()" classname="com.uco.TrafficAgent.domain.model.ContactTest" time="0.001"/>
+  <testcase name="validateFieldsMissingName()" classname="com.uco.TrafficAgent.domain.model.ContactTest" time="0.001"/>
+  <testcase name="validateFieldsMissingNumberPhone()" classname="com.uco.TrafficAgent.domain.model.ContactTest" time="0.001"/>
   <testcase name="validateCreationSuccessful()" classname="com.uco.TrafficAgent.domain.model.ContactTest" time="0.0"/>
-  <testcase name="validateFieldNameNull()" classname="com.uco.TrafficAgent.domain.model.ContactTest" time="0.0"/>
-  <testcase name="validateFieldsDescriptionNull()" classname="com.uco.TrafficAgent.domain.model.ContactTest" time="0.0"/>
-  <testcase name="validateFieldsMissingDescription()" classname="com.uco.TrafficAgent.domain.model.ContactTest" time="0.0"/>
-  <testcase name="validateFieldNumberPhoneNull()" classname="com.uco.TrafficAgent.domain.model.ContactTest" time="0.0"/>
+  <testcase name="validateFieldNameNull()" classname="com.uco.TrafficAgent.domain.model.ContactTest" time="0.001"/>
+  <testcase name="validateFieldsDescriptionNull()" classname="com.uco.TrafficAgent.domain.model.ContactTest" time="0.001"/>
+  <testcase name="validateFieldsMissingDescription()" classname="com.uco.TrafficAgent.domain.model.ContactTest" time="0.001"/>
+  <testcase name="validateFieldNumberPhoneNull()" classname="com.uco.TrafficAgent.domain.model.ContactTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
