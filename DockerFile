@@ -1,9 +1,4 @@
-FROM ubuntu:latest as build
-RUN apt-get update
-RUN apt-get install open jdk-17-jdk -y
-COPY . .
-RUN ./gradlew bootJar --no-daemon
-
-FROM open jdk:17-jdk-slim
-EXPOSE 8080
-COPY --from-build/build/libs/demo-1.jar app.jar
+FROM adoptopenjdk/openjdk17:alpine-jre # Copia el archivo JAR de la aplicación en el contenedor
+COPY build/libs/TrafficAgent-1.jar /app.jar # Exponer el puerto 8888
+EXPOSE 8888 # Ejecuta el comando para iniciar la aplicación Spring Boot
+ENTRYPOINT ["java","-jar","/app.jar"]
