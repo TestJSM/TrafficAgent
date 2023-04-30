@@ -4,8 +4,8 @@ RUN apt-get install open jdk-17-jdk -y
 COPY . .
 RUN ./gradlew bootJar --no-daemon
 
-FROM adoptopenjdk/openjdk17:alpine-jre
+FROM openjdk:17-jdk-slim
 EXPOSE 8888
-COPY build/libs/TrafficAgent-1.jar /app.jar
+COPY build/libs/TrafficAgent-1.jar /TrafficAgent.jar
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "TrafficAgent.jar"]
