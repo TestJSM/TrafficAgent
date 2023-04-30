@@ -6,4 +6,4 @@ RUN ./gradlew bootJar --no-daemon
 
 FROM openjdk:17-jdk-slim
 EXPOSE 8888
-COPY --from-build/build/libs/TrafficAgent-1.jar app.jar
+COPY --from-build/build/libs/TrafficAgent-1.jar /app.jar
