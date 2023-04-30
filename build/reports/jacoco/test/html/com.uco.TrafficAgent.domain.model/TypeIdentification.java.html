@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TypeIdentification.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TrafficAgent</a> &gt; <a href="index.source.html" class="el_package">com.uco.TrafficAgent.domain.model</a> &gt; <span class="el_source">TypeIdentification.java</span></div><h1>TypeIdentification.java</h1><pre class="source lang-java linenums">package com.uco.TrafficAgent.domain.model;
+
+import com.uco.TrafficAgent.domain.validator.ValidatorAttributes;
+import lombok.Getter;
+
+@Getter
+public class TypeIdentification {
+<span class="fc" id="L8">    private final String type;</span>
+
+    public static TypeIdentification creationType(String type){
+<span class="fc" id="L11">        ValidatorAttributes.validateRequired(type, &quot;El tipo de una identifiaciÃ³n no puede ser nula&quot;);</span>
+<span class="fc" id="L12">        return new TypeIdentification(type);</span>
+    }
+
+<span class="fc" id="L15">    private TypeIdentification(String type) {</span>
+<span class="fc" id="L16">        this.type = type;</span>
+<span class="fc" id="L17">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
