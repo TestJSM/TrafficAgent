@@ -18,7 +18,7 @@ public class MapperApplicationUserImpl implements MapperApplicationObject<DtoSav
     @Override
     public User mapperDtoToDomain(DtoSaveUser dto) {
         return User.createUser(dto.getIdentification(), dto.getFullName(), dto.getCellphone(),
-                dto.getPassword(),
+                dto.getPassword(), dto.getEmail(),
                 this.repositoryTypeId.getType(dto.getType()));
     }
 

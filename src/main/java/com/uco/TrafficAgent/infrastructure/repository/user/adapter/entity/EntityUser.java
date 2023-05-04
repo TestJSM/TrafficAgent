@@ -20,6 +20,8 @@ public class EntityUser {
     private String cellphone;
     @Column(length = 255)
     private String password;
+
+    private String email;
     @ManyToOne
     @JoinColumn(name = "type_identification")
     private EntityTypeId entityTypeId;
@@ -27,11 +29,13 @@ public class EntityUser {
     public EntityUser() {
     }
 
-    public EntityUser(String identification, String fullName, String cellphone, String password, EntityTypeId entityTypeId) {
+    public EntityUser(String identification, String fullName, String cellphone, String password, String email,
+                      EntityTypeId entityTypeId) {
         this.identification = identification;
         this.fullName = fullName;
         this.cellphone = cellphone;
         this.password = password;
+        this.email = email;
         this.entityTypeId = entityTypeId;
     }
 }

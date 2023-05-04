@@ -26,8 +26,8 @@ public class ServiceApplicationUpdateUser {
         dtoUpdateUser.setPassword(this.serviceEncryptedPassword.execute(dtoUpdateUser.getPassword()));
 
         TypeIdentification typeIdentification = this.repositoryTypeId.getType(dtoUpdateUser.getType());
-        this.serviceUpdateUser.executeUpdate(id,
-                dtoUpdateUser.getCellphone(), dtoUpdateUser.getFullName(), dtoUpdateUser.getPassword(),
+        this.serviceUpdateUser.executeUpdate(id, dtoUpdateUser.getCellphone(),
+                dtoUpdateUser.getFullName(), dtoUpdateUser.getPassword(), dtoUpdateUser.getEmail(),
                 typeIdentification);
     }
 }

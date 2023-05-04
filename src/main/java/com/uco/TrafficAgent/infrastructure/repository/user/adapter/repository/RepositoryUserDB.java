@@ -37,7 +37,7 @@ public class RepositoryUserDB implements RepositoryUser {
     public void saveUser(User user) {
         EntityTypeId entityTypeId = this.repositoryTypeIdJpa.findByType(user.getTypeIdentification().getType());
         EntityUser entityUser = new EntityUser(user.getIdentification(), user.getFullName(),
-                user.getCellphone(), user.getPassword(), entityTypeId);
+                user.getCellphone(), user.getPassword(), user.getEmail(), entityTypeId);
 
         this.repositoryUserJpa.save(entityUser);
     }
@@ -57,6 +57,7 @@ public class RepositoryUserDB implements RepositoryUser {
         entityUser.setFullName(user.getFullName());
         entityUser.setCellphone(user.getCellphone());
         entityUser.setPassword(user.getPassword());
+        entityUser.setEmail(user.getEmail());
         entityUser.setEntityTypeId(entityTypeId);
 
         this.repositoryUserJpa.save(entityUser);

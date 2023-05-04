@@ -32,6 +32,13 @@ public class UserTest {
     }
 
     @Test
+    void validateFieldsMissingEmail() {
+        Assertions.assertEquals("Un usuario debe tener un email asociado",
+                Assertions.assertThrows(IllegalArgumentException.class, () ->
+                        new UserTestDataBuilder().byDefault().withEmail("").build()).getMessage());
+    }
+
+    @Test
     void validateFieldsMissingCellPhone() {
         Assertions.assertEquals("El celular del usuraio no puede ser nulo",
                 Assertions.assertThrows(IllegalArgumentException.class, () ->

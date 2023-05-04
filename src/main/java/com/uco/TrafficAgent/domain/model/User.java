@@ -10,25 +10,29 @@ public class User {
     private final String fullName;
     private final String cellphone;
     private final String password;
+
+    private final String email;
     private final TypeIdentification typeIdentification;
 
     public static User createUser(String identification, String fullName, String cellphone, String password,
-                                  TypeIdentification typeIdentification){
+                                  String email, TypeIdentification typeIdentification){
         ValidatorAttributes.validateRequired(identification, "La identifiación del usuraio no puede ser nula");
         ValidatorAttributes.validateRequired(fullName, "El nombre del usuraio no puede ser nulo");
         ValidatorAttributes.validateRequired(cellphone, "El celular del usuraio no puede ser nulo");
         ValidatorAttributes.validateRequired(password, "La contraseña del usuraio no puede ser nulo");
+        ValidatorAttributes.validateRequired(email, "Un usuario debe tener un email asociado");
         ValidatorAttributes.stringContainNumbers(cellphone, "El tefono tiene caracteres no soportados");
         ValidatorObjects.validator(typeIdentification, "El tipo de identiicación no puede ser nula");
         ValidatorAttributes.stringContainNumbers(identification, "La identificación tiene caracteres no soportados");
-        return new User(identification, fullName, cellphone, password, typeIdentification);
+        return new User(identification, fullName, cellphone, password, email, typeIdentification);
     }
 
-    public User(String identification, String fullName, String cellphone, String password, TypeIdentification typeIdentification) {
+    public User(String identification, String fullName, String cellphone, String password, String email, TypeIdentification typeIdentification) {
         this.identification = identification;
         this.fullName = fullName;
         this.cellphone = cellphone;
         this.password = password;
+        this.email = email;
         this.typeIdentification = typeIdentification;
     }
 }

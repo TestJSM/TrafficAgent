@@ -104,7 +104,7 @@ class ComandUserTest {
     }
     @Test
     void updateUserSuccessful() throws Exception {
-        DtoUpdateUser comandUserTestsDataBuilder = new DtoUpdateUser("Cambio", "456789", "w9Snpo<code>t0d0", 2);
+        DtoUpdateUser comandUserTestsDataBuilder = new DtoUpdateUser("Cambio", "456789","w9Snpo<code>t0d0", "@email.com",2);
 
         mocMvc.perform(put("/user/update?id=" + "123456789")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -121,7 +121,7 @@ class ComandUserTest {
 
     @Test
     void noUpdateUserBecauseNoExists() throws Exception {
-        DtoUpdateUser comandUserTestsDataBuilder = new DtoUpdateUser("Cambio", "456789", "w9Snpo<code>t0d0", 2);
+        DtoUpdateUser comandUserTestsDataBuilder = new DtoUpdateUser("Cambio", "456789", "w9Snpo<code>t0d0", "@email.com",2);
 
         mocMvc.perform(put("/user/update?id=" + "98")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -134,7 +134,7 @@ class ComandUserTest {
 
     @Test
     void noUpdateUserPasswordSizeIncorrect() throws Exception {
-        DtoUpdateUser comandUserTestsDataBuilder = new DtoUpdateUser("Cambio", "456789", "w9245Snpo<code>t0d0", 2);
+        DtoUpdateUser comandUserTestsDataBuilder = new DtoUpdateUser("Cambio", "456789", "w9245Snpo<code>t0d0", "@email.com",2);
 
         mocMvc.perform(put("/user/update?id=" + "123456789")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -147,7 +147,7 @@ class ComandUserTest {
 
     @Test
     void noUpdateUserPasswordPasswordIncorrect() throws Exception {
-        DtoUpdateUser comandUserTestsDataBuilder = new DtoUpdateUser("Cambio", "456789", "12fdsbu754hk8", 2);
+        DtoUpdateUser comandUserTestsDataBuilder = new DtoUpdateUser("Cambio", "456789", "12fdsbu754hk8", "@email.com",2);
 
         mocMvc.perform(put("/user/update?id=" + "123456789")
                         .contentType(MediaType.APPLICATION_JSON)

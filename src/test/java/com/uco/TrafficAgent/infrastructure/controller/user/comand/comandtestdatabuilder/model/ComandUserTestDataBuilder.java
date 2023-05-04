@@ -9,6 +9,8 @@ public class ComandUserTestDataBuilder {
     private String fullName;
     private String cellphone;
     private String password;
+
+    private String email;
     private int type;
 
     public ComandUserTestDataBuilder byDefault() {
@@ -17,6 +19,7 @@ public class ComandUserTestDataBuilder {
         this.fullName = "Nombre";
         this.cellphone = "123456789";
         this.password = "w6Unpo<code>t0d0";
+        this.email = "@email.com";
         this.type = 1;
         return this;
     }
@@ -41,12 +44,17 @@ public class ComandUserTestDataBuilder {
         return this;
     }
 
+    public ComandUserTestDataBuilder withEmail(String email){
+        this.email = email;
+        return this;
+    }
+
     public ComandUserTestDataBuilder withType(int type){
         this.type = type;
         return this;
     }
 
     public DtoSaveUser build() {
-        return new DtoSaveUser(identification, fullName, cellphone, password, type);
+        return new DtoSaveUser(identification, fullName, cellphone, password, email,type);
     }
 }
