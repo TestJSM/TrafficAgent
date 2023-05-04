@@ -14,5 +14,7 @@ public class DtoSaveUser {
     private String fullName;
     private String cellphone;
     private String password;
+
+    private String email;
     private int type;
 }

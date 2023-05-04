@@ -13,13 +13,14 @@ public class MapperUserImpl implements MapperInfrastructureObject<EntityUser, Us
     @Override
     public User mapperEntityToDomain(EntityUser entity) {
         return User.createUser(entity.getIdentification(), entity.getFullName(),
-                entity.getCellphone(), entity.getPassword(),
+                entity.getCellphone(), entity.getPassword(), entity.getEmail(),
                 TypeIdentification.creationType(entity.getEntityTypeId().getType()));
     }
 
     @Override
     public EntityUser mapperDomainToEntity(User domain) {
         return new EntityUser(domain.getIdentification(), domain.getFullName(), domain.getCellphone(),
-                domain.getPassword(), new EntityTypeId(domain.getTypeIdentification().getType()));
+                domain.getPassword(), domain.getEmail(),
+                new EntityTypeId(domain.getTypeIdentification().getType()));
     }
 }

@@ -10,6 +10,8 @@ public class UserTestDataBuilder {
     private String fullName;
     private String cellphone;
     private String password;
+
+    private String email;
     private TypeIdentification typeIdentification;
 
     public UserTestDataBuilder byDefault() {
@@ -18,6 +20,7 @@ public class UserTestDataBuilder {
         this.fullName = "Nombre";
         this.cellphone = "123456789";
         this.password = "w6Unpo<code>t0d0";
+        this.email = "algo@email.com";
         this.typeIdentification = new TypeIdentificationTestDataBuilder().byDefault().build();
         return this;
     }
@@ -42,12 +45,17 @@ public class UserTestDataBuilder {
         return this;
     }
 
+    public UserTestDataBuilder withEmail(String email){
+        this.email = email;
+        return this;
+    }
+
     public UserTestDataBuilder withTypeIdentification (TypeIdentification typeIdentification){
         this.typeIdentification = typeIdentification;
         return this;
     }
 
     public User build() {
-        return User.createUser(identification, fullName, cellphone, password,typeIdentification);
+        return User.createUser(identification, fullName, cellphone, password, email, typeIdentification);
     }
 }

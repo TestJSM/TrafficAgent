@@ -12,12 +12,12 @@ public class ServiceUpdateUser {
         this.repositoryUser = repositoryUser;
     }
 
-    public void executeUpdate(String id, String cellphone, String fullName, String password,
+    public void executeUpdate(String id, String cellphone, String fullName, String password, String email,
                               TypeIdentification typeIdentification){
         User user = this.repositoryUser.consultUserByIdentification(id);
         if(user != null){
             this.repositoryUser.updateUser(User.createUser(user.getIdentification(),
-                    fullName, cellphone, password, typeIdentification));
+                    fullName, cellphone, password, email,typeIdentification));
         }
         else{
             throw new IllegalArgumentException("No hay ningún usuario con esa identificación");
