@@ -46,6 +46,28 @@
           </collectionProp>
         </HeaderManager>
         <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Email Random" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import java.util.Random
+
+String generateRandomString(int length) {
+    def chars = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&quot;;
+    def rnd = new Random();
+    StringBuilder sb = new StringBuilder(length);
+    (1..length).each {
+        sb.append(chars.charAt(rnd.nextInt(chars.length())));
+    }
+    return sb.toString();
+}
+
+String randomString = &quot;\&quot;@&quot;+generateRandomString(5)+&quot;.com\&quot;&quot;;
+vars.put(&quot;randomString&quot;, randomString);
+</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
         <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Numeros enteros Random" enabled="true">
           <stringProp name="cacheKey">true</stringProp>
           <stringProp name="filename"></stringProp>
@@ -75,9 +97,10 @@ vars.put(&quot;numerosEnteros&quot;, numerosEnteros);
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
 	&quot;identification&quot;: ${numerosEnteros},&#xd;
-	&quot;fullName&quot;: &quot;aa&quot;,&#xd;
+	&quot;fullName&quot;: &quot;testDeploy1.0&quot;,&#xd;
 	&quot;cellphone&quot;: ${numerosEnteros},&#xd;
 	&quot;password&quot;: &quot;w6Unpo&lt;code&gt;t0d0&quot;,&#xd;
+	&quot;email&quot;:  ${randomString},&#xd;
 	&quot;type&quot;: 1&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -109,6 +132,7 @@ vars.put(&quot;numerosEnteros&quot;, numerosEnteros);
 	&quot;fullName&quot;: &quot;update&quot;,&#xd;
 	&quot;cellphone&quot;: &quot;1234567890&quot;,&#xd;
 	&quot;password&quot;: &quot;w2Unpo&lt;code&gt;t0d0&quot;,&#xd;
+	&quot;email&quot;:  ${randomString},&#xd;
 	&quot;type&quot;: 2&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
