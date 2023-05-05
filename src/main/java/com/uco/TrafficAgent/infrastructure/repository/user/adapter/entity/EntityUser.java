@@ -21,6 +21,7 @@ public class EntityUser {
     @Column(length = 255)
     private String password;
 
+    @Column(unique = true)
     private String email;
     @ManyToOne
     @JoinColumn(name = "type_identification")
