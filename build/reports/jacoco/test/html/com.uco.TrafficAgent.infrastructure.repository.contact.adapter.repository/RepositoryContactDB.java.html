@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RepositoryContactDB.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TrafficAgent</a> &gt; <a href="index.source.html" class="el_package">com.uco.TrafficAgent.infrastructure.repository.contact.adapter.repository</a> &gt; <span class="el_source">RepositoryContactDB.java</span></div><h1>RepositoryContactDB.java</h1><pre class="source lang-java linenums">package com.uco.TrafficAgent.infrastructure.repository.contact.adapter.repository;
+
+import com.uco.TrafficAgent.domain.dto.DtoContactSummary;
+import com.uco.TrafficAgent.domain.model.Contact;
+import com.uco.TrafficAgent.domain.port.contact.RepositoryContact;
+import com.uco.TrafficAgent.infrastructure.repository.contact.adapter.entity.EntityContact;
+import com.uco.TrafficAgent.infrastructure.repository.contact.adapter.entity.EntityContactEmergency;
+import com.uco.TrafficAgent.infrastructure.repository.contact.adapter.repository.jpa.RepositoryContactEmergencyJpa;
+import com.uco.TrafficAgent.infrastructure.repository.contact.adapter.repository.jpa.RepositoryContactJpa;
+import com.uco.TrafficAgent.infrastructure.repository.user.adapter.entity.EntityUser;
+import com.uco.TrafficAgent.infrastructure.repository.user.adapter.repository.jpa.RepositoryUserJpa;
+import org.springframework.stereotype.Repository;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Repository
+public class RepositoryContactDB implements RepositoryContact {
+
+    private final RepositoryContactJpa repositoryContactJpa;
+    private final RepositoryUserJpa repositoryUserJpa;
+
+    private final RepositoryContactEmergencyJpa repositoryContactEmergencyJpa;
+
+<span class="fc" id="L27">    public RepositoryContactDB(RepositoryContactJpa repositoryContactJpa, RepositoryUserJpa repositoryUserJpa, RepositoryContactEmergencyJpa repositoryContactEmergencyJpa) {</span>
+<span class="fc" id="L28">        this.repositoryContactJpa = repositoryContactJpa;</span>
+<span class="fc" id="L29">        this.repositoryUserJpa = repositoryUserJpa;</span>
+<span class="fc" id="L30">        this.repositoryContactEmergencyJpa = repositoryContactEmergencyJpa;</span>
+<span class="fc" id="L31">    }</span>
+
+    @Override
+    public List&lt;DtoContactSummary&gt; listContactByUser(String idUser) {
+<span class="nc" id="L35">        return null;</span>
+    }
+
+    @Override
+    public List&lt;DtoContactSummary&gt; listContactByProximity(String id, double latitude, double longitude) {
+<span class="fc" id="L40">        List&lt;DtoContactSummary&gt; listAllContacts = new ArrayList&lt;&gt;();</span>
+
+
+<span class="fc" id="L43">        List&lt;EntityContactEmergency&gt; contactEmergencies = this.repositoryContactEmergencyJpa.findContactsByLatLong(latitude, longitude);</span>
+<span class="pc" id="L44">        List&lt;DtoContactSummary&gt; contactEmergency = contactEmergencies.stream().map(entity -&gt; new DtoContactSummary(entity.getName(),</span>
+<span class="pc" id="L45">                entity.getDescription(), entity.getNumberPhone(), entity.getDistancia())).toList();</span>
+
+
+<span class="fc" id="L48">        List&lt;EntityContact&gt; entities = this.repositoryContactJpa.findContactsByLatLong(latitude, longitude, id);</span>
+<span class="fc" id="L49">        List&lt;DtoContactSummary&gt; contact = entities.stream().map(entity -&gt; new DtoContactSummary(entity.getName(),</span>
+<span class="fc" id="L50">                entity.getDescription(), entity.getNumberPhone(), entity.getDistancia())).toList();</span>
+
+<span class="fc" id="L52">        listAllContacts.addAll(contact);</span>
+<span class="fc" id="L53">        listAllContacts.addAll(contactEmergency);</span>
+
+<span class="fc" id="L55">        List&lt;DtoContactSummary&gt; summaryList = listAllContacts.stream()</span>
+<span class="fc" id="L56">                .sorted(Comparator.comparingDouble(DtoContactSummary::getDistancia))</span>
+<span class="fc" id="L57">                .toList();</span>
+
+<span class="fc" id="L59">        return summaryList;</span>
+    }
+
+    @Override
+    public void saveContact(Contact contact) {
+<span class="fc" id="L64">        EntityUser entityUser = this.repositoryUserJpa.findByIdentification(contact.getUser().getIdentification());</span>
+<span class="fc" id="L65">        EntityContact entityContact = new EntityContact(contact.getLatitud(), contact.getLongitud(), contact.getName(),</span>
+<span class="fc" id="L66">                contact.getDescription(), contact.getNumberPhone(), entityUser);</span>
+<span class="fc" id="L67">        this.repositoryContactJpa.save(entityContact);</span>
+<span class="fc" id="L68">    }</span>
+
+    @Override
+    public boolean existContact(String numberPhone) {
+<span class="fc bfc" id="L72" title="All 2 branches covered.">        return this.repositoryContactJpa.findByNumberPhone(numberPhone) != null;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

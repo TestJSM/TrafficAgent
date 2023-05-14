@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RepositoryReportDB.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TrafficAgent</a> &gt; <a href="index.source.html" class="el_package">com.uco.TrafficAgent.infrastructure.repository.report.adapter.repository</a> &gt; <span class="el_source">RepositoryReportDB.java</span></div><h1>RepositoryReportDB.java</h1><pre class="source lang-java linenums">package com.uco.TrafficAgent.infrastructure.repository.report.adapter.repository;
+
+import com.uco.TrafficAgent.domain.dto.DtoReportSummary;
+import com.uco.TrafficAgent.domain.model.Report;
+import com.uco.TrafficAgent.domain.port.report.RepositoryReport;
+import com.uco.TrafficAgent.infrastructure.repository.report.adapter.entity.EntityReport;
+import com.uco.TrafficAgent.infrastructure.repository.report.adapter.repository.jpa.RepositoryReportJpa;
+import com.uco.TrafficAgent.infrastructure.repository.user.adapter.entity.EntityUser;
+import com.uco.TrafficAgent.infrastructure.repository.user.adapter.repository.jpa.RepositoryUserJpa;
+import org.springframework.stereotype.Repository;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Repository
+public class RepositoryReportDB implements RepositoryReport {
+    private final RepositoryReportJpa repositoryReportJpa;
+    private final RepositoryUserJpa repositoryUserJpa;
+
+<span class="fc" id="L20">    public RepositoryReportDB(RepositoryReportJpa repositoryReportJpa, RepositoryUserJpa repositoryUserJpa) {</span>
+<span class="fc" id="L21">        this.repositoryReportJpa = repositoryReportJpa;</span>
+<span class="fc" id="L22">        this.repositoryUserJpa = repositoryUserJpa;</span>
+<span class="fc" id="L23">    }</span>
+
+
+    @Override
+    public List&lt;DtoReportSummary&gt; listReportByUser(String idUser) {
+<span class="nc" id="L28">        List&lt;EntityReport&gt; entities = this.repositoryReportJpa.findByIdentification(idUser);</span>
+<span class="nc" id="L29">        return entities.stream().map(entity -&gt; new DtoReportSummary(</span>
+<span class="nc" id="L30">                entity.getLatitud(), entity.getLongitud(), entity.getDescription(), entity.getUrl(),</span>
+<span class="nc" id="L31">                entity.getEntityUser().getIdentification(),</span>
+<span class="nc" id="L32">                entity.getDateReport())).toList();</span>
+    }
+
+    @Override
+    public void saveReport(Report report) {
+<span class="nc" id="L37">        EntityUser entityUser = this.repositoryUserJpa.findByIdentification(report.getUser().getIdentification());</span>
+<span class="nc" id="L38">        EntityReport entityReport = new EntityReport(report.getLatitud(), report.getLongitud(),</span>
+<span class="nc" id="L39">                report.getDescription(), report.getUrl(), report.getDateReport(),entityUser);</span>
+
+<span class="nc" id="L41">        this.repositoryReportJpa.save(entityReport);</span>
+<span class="nc" id="L42">    }</span>
+
+    @Override
+    public List&lt;DtoReportSummary&gt; listAllReportByDate(LocalDateTime start, LocalDateTime end) {
+<span class="nc" id="L46">        List&lt;EntityReport&gt; entities = this.repositoryReportJpa.findByDateBetween(start, end);</span>
+<span class="nc" id="L47">        return entities.stream().map(entity -&gt; new DtoReportSummary(</span>
+<span class="nc" id="L48">                entity.getLatitud(), entity.getLongitud(), entity.getDescription(), entity.getUrl(),</span>
+<span class="nc" id="L49">                entity.getEntityUser().getIdentification(),</span>
+<span class="nc" id="L50">                entity.getDateReport())).toList();</span>
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

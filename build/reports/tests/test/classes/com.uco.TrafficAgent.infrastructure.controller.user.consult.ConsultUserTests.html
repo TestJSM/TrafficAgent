@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - ConsultUserTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>ConsultUserTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.uco.TrafficAgent.infrastructure.controller.user.consult.html">com.uco.TrafficAgent.infrastructure.controller.user.consult</a> &gt; ConsultUserTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.012s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">consultAllUsers()</td>
+<td class="success">0.012s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2023-05-14 15:25:06.817  INFO 16268 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.uco.TrafficAgent.infrastructure.controller.user.consult.ConsultUserTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2023-05-14 15:25:06.819  INFO 16268 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2023-05-14 15:25:06.820  INFO 16268 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7f8dd1ab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2cee245a, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@22a0b5e5, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7e8097d7, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6f110125, org.springframework.test.context.support.DirtiesContextTestExecutionListener@32003469, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1528b051, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6fecb30c, org.springframework.test.context.event.EventPublishingTestExecutionListener@8138ffd, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3b0341ea, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6b79d4e3, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@61076e53, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@757f79e9, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@54527abd, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@71a97218]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.3)
+
+2023-05-14 15:25:06.834  INFO 16268 --- [    Test worker] c.u.T.i.c.user.consult.ConsultUserTests  : Starting ConsultUserTests using Java 18.0.2 on SANTIAGOP-CARDENAS with PID 16268 (started by santiago.cardenas in C:\Users\santiago.cardenas\Desktop\TrafficAgent\TrafficAgent)
+2023-05-14 15:25:06.834  INFO 16268 --- [    Test worker] c.u.T.i.c.user.consult.ConsultUserTests  : The following profiles are active: test
+2023-05-14 15:25:06.934  INFO 16268 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-14 15:25:06.964  INFO 16268 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 5 JPA repository interfaces.
+2023-05-14 15:25:07.047  INFO 16268 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-14 15:25:07.051  INFO 16268 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Starting...
+2023-05-14 15:25:07.051  INFO 16268 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Start completed.
+2023-05-14 15:25:07.051  INFO 16268 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-14 15:25:07.087  INFO 16268 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-14 15:25:07.087  INFO 16268 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-14 15:25:07.202  WARN 16268 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-14 15:25:07.343  INFO 16268 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-05-14 15:25:07.343  INFO 16268 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-05-14 15:25:07.343  INFO 16268 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-05-14 15:25:07.346  INFO 16268 --- [    Test worker] c.u.T.i.c.user.consult.ConsultUserTests  : Started ConsultUserTests in 0.525 seconds (JVM running for 18.746)
+2023-05-14 15:25:07.359  INFO 16268 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-14 15:25:07.360  INFO 16268 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Shutdown initiated...
+2023-05-14 15:25:07.360  INFO 16268 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Shutdown completed.
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.6.1</a> at May 14, 2023, 3:25:07 PM</p>
+</div>
+</div>
+</body>
+</html>

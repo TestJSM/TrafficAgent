@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.uco.TrafficAgent.domain.model.UserTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2023-05-14T20:24:52" hostname="SANTIAGOP-CARDE" time="0.008">
+  <properties/>
+  <testcase name="validateFieldsMissingPassword()" classname="com.uco.TrafficAgent.domain.model.UserTest" time="0.0"/>
+  <testcase name="validateFieldsMissingFullName()" classname="com.uco.TrafficAgent.domain.model.UserTest" time="0.0"/>
+  <testcase name="validateContainNumberCellPhone()" classname="com.uco.TrafficAgent.domain.model.UserTest" time="0.001"/>
+  <testcase name="validateFieldsIdentificationNull()" classname="com.uco.TrafficAgent.domain.model.UserTest" time="0.0"/>
+  <testcase name="validateFieldsIdentificationType()" classname="com.uco.TrafficAgent.domain.model.UserTest" time="0.0"/>
+  <testcase name="validateFieldsMissingEmail()" classname="com.uco.TrafficAgent.domain.model.UserTest" time="0.001"/>
+  <testcase name="validateFieldsMissingCellPhone()" classname="com.uco.TrafficAgent.domain.model.UserTest" time="0.001"/>
+  <testcase name="validateContainNumberIdentification()" classname="com.uco.TrafficAgent.domain.model.UserTest" time="0.0"/>
+  <testcase name="validateFieldsCellPhoneNull()" classname="com.uco.TrafficAgent.domain.model.UserTest" time="0.001"/>
+  <testcase name="validateCreationSuccessful()" classname="com.uco.TrafficAgent.domain.model.UserTest" time="0.0"/>
+  <testcase name="validateFieldsPasswordNull()" classname="com.uco.TrafficAgent.domain.model.UserTest" time="0.0"/>
+  <testcase name="validateFieldsFullNameNull()" classname="com.uco.TrafficAgent.domain.model.UserTest" time="0.001"/>
+  <testcase name="validateFieldsMissingIdentification()" classname="com.uco.TrafficAgent.domain.model.UserTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
