@@ -14,9 +14,9 @@ public class ServiceListAllReportByDate {
         this.repositoryReport = repositoryReport;
     }
 
-    public List<DtoReportSummary> executeListAll(LocalDateTime dateTime){
-        LocalDateTime dateTimeAfter = dateTime.plusHours(12);
-        List<DtoReportSummary> reports = this.repositoryReport.listAllReportByDate(dateTime, dateTimeAfter);
+    public List<DtoReportSummary> executeListAll(LocalDateTime endDate){
+        LocalDateTime startDate = endDate.minusHours(12);
+        List<DtoReportSummary> reports = this.repositoryReport.listAllReportByDate(startDate, endDate);
         if(reports.isEmpty()){
             throw new IllegalStateException("No hay reportes asociados al usuario en este horario");
         }else {
