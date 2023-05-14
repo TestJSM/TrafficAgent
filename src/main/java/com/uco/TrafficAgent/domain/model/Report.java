@@ -5,6 +5,7 @@ import com.uco.TrafficAgent.domain.validator.ValidatorObjects;
 import lombok.Getter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 public class Report {
@@ -14,9 +15,9 @@ public class Report {
     private final String url;
     private final User user;
 
-    private final LocalDate dateReport;
+    private final LocalDateTime dateReport;
 
-    public static Report createReport(double latitud, double longitud, String description, String url, User user, LocalDate dateReport){
+    public static Report createReport(double latitud, double longitud, String description, String url, User user, LocalDateTime dateReport){
         ValidatorAttributes.validateRequired(description, "La descripción del reporte no puede ser nulo");
         ValidatorAttributes.validateRequired(url, "La url del reporte no puede ser nulo");
         ValidatorAttributes.stringContainNumbersDecimal(String.valueOf(latitud), "La latitud tiene que ser un número decimal");
@@ -25,7 +26,7 @@ public class Report {
         return new Report(latitud, longitud, description, url, user, dateReport);
     }
 
-    private Report(double latitud, double longitud, String description, String url, User user, LocalDate dateReport) {
+    private Report(double latitud, double longitud, String description, String url, User user, LocalDateTime dateReport) {
         this.latitud = latitud;
         this.longitud = longitud;
         this.description = description;

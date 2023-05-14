@@ -9,6 +9,7 @@ import com.uco.TrafficAgent.infrastructure.repository.user.adapter.entity.Entity
 import com.uco.TrafficAgent.infrastructure.repository.user.adapter.repository.jpa.RepositoryUserJpa;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
@@ -39,4 +40,15 @@ public class RepositoryReportDB implements RepositoryReport {
 
         this.repositoryReportJpa.save(entityReport);
     }
+
+    @Override
+    public List<DtoReportSummary> listAllReportByDate(LocalDateTime start, LocalDateTime end) {
+        List<EntityReport> entities = this.repositoryReportJpa.findByDateBetween(start, end);
+        return entities.stream().map(entity -> new DtoReportSummary(
+                entity.getLatitud(), entity.getLongitud(), entity.getDescription(), entity.getUrl(),
+                entity.getEntityUser().getIdentification(),
+                entity.getDateReport())).toList();
+    }
+
+
 }

@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -20,7 +21,7 @@ public class EntityReport {
     private String description;
     private String url;
     @Column(name = "date_report")
-    private LocalDate dateReport;
+    private LocalDateTime dateReport;
 
     @ManyToOne
     @JoinColumn(name = "identification")
@@ -29,7 +30,7 @@ public class EntityReport {
     public EntityReport() {
     }
 
-    public EntityReport(double latitud, double longitud, String description, String url, LocalDate dateReport,EntityUser entityUser) {
+    public EntityReport(double latitud, double longitud, String description, String url, LocalDateTime dateReport,EntityUser entityUser) {
         this.latitud = latitud;
         this.longitud = longitud;
         this.description = description;

@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class ReportTest {
 
@@ -20,7 +21,7 @@ public class ReportTest {
         Assertions.assertEquals("1234567890", report.getUser().getIdentification());
         Assertions.assertEquals("123456789", report.getUser().getCellphone());
         Assertions.assertEquals("w6Unpo<code>t0d0", report.getUser().getPassword());
-        Assertions.assertEquals(LocalDate.now(), report.getDateReport());
+        Assertions.assertEquals(LocalDateTime.now(), report.getDateReport());
         Assertions.assertEquals("C.C", report.getUser().getTypeIdentification().getType());
     }
 
