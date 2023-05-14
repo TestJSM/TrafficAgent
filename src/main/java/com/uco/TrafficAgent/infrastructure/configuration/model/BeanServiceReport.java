@@ -2,6 +2,7 @@ package com.uco.TrafficAgent.infrastructure.configuration.model;
 
 
 import com.uco.TrafficAgent.domain.port.report.RepositoryReport;
+import com.uco.TrafficAgent.domain.service.report.ServiceListAllReportByDate;
 import com.uco.TrafficAgent.domain.service.report.ServiceListAllReportByUser;
 import com.uco.TrafficAgent.domain.service.report.ServiceSaveReport;
 import org.springframework.context.annotation.Bean;
@@ -19,4 +20,10 @@ public class BeanServiceReport {
     public ServiceListAllReportByUser serviceListAllReportByUser(RepositoryReport repositoryReport){
         return new ServiceListAllReportByUser(repositoryReport);
     }
+
+    @Bean
+    public ServiceListAllReportByDate serviceListAllReportByDate(RepositoryReport repositoryReport){
+        return new ServiceListAllReportByDate(repositoryReport);
+    }
+
 }
