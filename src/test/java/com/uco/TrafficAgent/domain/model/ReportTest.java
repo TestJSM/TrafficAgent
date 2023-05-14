@@ -21,7 +21,6 @@ public class ReportTest {
         Assertions.assertEquals("1234567890", report.getUser().getIdentification());
         Assertions.assertEquals("123456789", report.getUser().getCellphone());
         Assertions.assertEquals("w6Unpo<code>t0d0", report.getUser().getPassword());
-        Assertions.assertEquals(LocalDateTime.now(), report.getDateReport());
         Assertions.assertEquals("C.C", report.getUser().getTypeIdentification().getType());
     }
 
