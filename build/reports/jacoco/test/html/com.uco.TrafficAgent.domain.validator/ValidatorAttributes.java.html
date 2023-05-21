@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ValidatorAttributes.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TrafficAgent</a> &gt; <a href="index.source.html" class="el_package">com.uco.TrafficAgent.domain.validator</a> &gt; <span class="el_source">ValidatorAttributes.java</span></div><h1>ValidatorAttributes.java</h1><pre class="source lang-java linenums">package com.uco.TrafficAgent.domain.validator;
+
+import java.util.List;
+
+public class ValidatorAttributes {
+
+    private static final String PATTERN = &quot;^(?=.*\\d)(?=.*[\\u0021-\\u002b\\u003c-\\u0040])(?=.*[A-Z])(?=.*[a-z])\\S{8,16}&quot;;
+    private static final String PATTERN_NUMBER = &quot;[0-9]*&quot;;
+    private static final String PATTERN_DECIMAL = &quot;^-?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?$&quot;;
+
+    private ValidatorAttributes() {
+    }
+
+    public static void validateRequired(String valor, String message) {
+<span class="fc bfc" id="L15" title="All 4 branches covered.">        if(valor == null || valor.isBlank()) {</span>
+<span class="fc" id="L16">            throw new IllegalArgumentException(message);</span>
+        }
+<span class="fc" id="L18">    }</span>
+
+    public static void noEmpty(List&lt;? extends Object&gt; lista, String mensaje){
+<span class="pc bpc" id="L21" title="2 of 4 branches missed.">        if(lista == null || lista.isEmpty()){</span>
+<span class="nc" id="L22">            throw  new IllegalArgumentException(mensaje);</span>
+        }
+<span class="fc" id="L24">    }</span>
+
+    private static boolean acceptancePatternNumber(String valor, String pattern) {
+<span class="fc" id="L27">        return valor.matches(pattern);</span>
+    }
+
+    public static void stringContainNumbers(String valor, String message) {
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        if(!acceptancePatternNumber(valor, PATTERN_NUMBER))</span>
+        {
+<span class="fc" id="L33">            throw new IllegalArgumentException(message);</span>
+        }
+<span class="fc" id="L35">    }</span>
+
+
+    private static boolean acceptancePatternDecimal(String valor, String pattern) {
+<span class="fc" id="L39">        return valor.matches(pattern);</span>
+    }
+
+    public static void stringContainNumbersDecimal(String valor, String message) {
+<span class="pc bpc" id="L43" title="1 of 2 branches missed.">        if(!acceptancePatternDecimal(valor, PATTERN_DECIMAL))</span>
+        {
+<span class="nc" id="L45">            throw new IllegalArgumentException(message);</span>
+        }
+<span class="fc" id="L47">    }</span>
+
+    public static void sizePassword(String valor, String message)
+    {
+<span class="pc bpc" id="L51" title="1 of 4 branches missed.">        if(!(valor.length()&gt;=8 &amp;&amp; valor.length()&lt;=16))</span>
+        {
+<span class="fc" id="L53">            throw new IllegalArgumentException(message);</span>
+        }
+<span class="fc" id="L55">    }</span>
+
+    private static boolean acceptancePatternPassword(String data, String pattern)
+    {
+<span class="fc" id="L59">        return data.matches(pattern);</span>
+    }
+
+    public static void specialCharactersPassword(String password, String message)
+    {
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        if(!acceptancePatternPassword(password, PATTERN))</span>
+        {
+<span class="fc" id="L66">            throw new IllegalArgumentException(message);</span>
+        }
+<span class="fc" id="L68">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

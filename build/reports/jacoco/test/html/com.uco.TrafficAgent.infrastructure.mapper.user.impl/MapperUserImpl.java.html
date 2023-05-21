@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MapperUserImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TrafficAgent</a> &gt; <a href="index.source.html" class="el_package">com.uco.TrafficAgent.infrastructure.mapper.user.impl</a> &gt; <span class="el_source">MapperUserImpl.java</span></div><h1>MapperUserImpl.java</h1><pre class="source lang-java linenums">package com.uco.TrafficAgent.infrastructure.mapper.user.impl;
+
+import com.uco.TrafficAgent.domain.model.RolUser;
+import com.uco.TrafficAgent.domain.model.TypeIdentification;
+import com.uco.TrafficAgent.domain.model.User;
+import com.uco.TrafficAgent.infrastructure.mapper.MapperInfrastructureObject;
+import com.uco.TrafficAgent.infrastructure.repository.rol.adapter.entity.EntityRol;
+import com.uco.TrafficAgent.infrastructure.repository.type.adapter.entity.EntityTypeId;
+import com.uco.TrafficAgent.infrastructure.repository.user.adapter.entity.EntityUser;
+import org.springframework.context.annotation.Configuration;
+
+import java.util.stream.Collectors;
+
+@Configuration
+<span class="fc" id="L15">public class MapperUserImpl implements MapperInfrastructureObject&lt;EntityUser, User&gt; {</span>
+
+    @Override
+    public User mapperEntityToDomain(EntityUser entity) {
+<span class="fc" id="L19">        return User.createUser(entity.getIdentification(), entity.getFullName(),</span>
+<span class="fc" id="L20">                entity.getCellphone(), entity.getPassword(), entity.getEmail(),</span>
+<span class="fc" id="L21">                TypeIdentification.creationType(entity.getEntityTypeId().getType()),</span>
+<span class="fc" id="L22">                entity.getRoles().stream().map(rol -&gt; RolUser.of(rol.getRol())).collect(Collectors.toList()));</span>
+    }
+
+    @Override
+    public EntityUser mapperDomainToEntity(User domain) {
+<span class="nc" id="L27">        return new EntityUser(domain.getIdentification(), domain.getFullName(), domain.getCellphone(),</span>
+<span class="nc" id="L28">                domain.getPassword(), domain.getEmail(),</span>
+<span class="nc" id="L29">                new EntityTypeId(domain.getTypeIdentification().getType()),</span>
+<span class="nc" id="L30">                domain.getRoles().stream().map(rol -&gt; new EntityRol(rol.getRol())).collect(Collectors.toList()));</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

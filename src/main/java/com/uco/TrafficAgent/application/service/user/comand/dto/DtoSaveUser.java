@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -17,4 +19,5 @@ public class DtoSaveUser {
 
     private String email;
     private int type;
+    private List<DtoRolUser> roles;
 }

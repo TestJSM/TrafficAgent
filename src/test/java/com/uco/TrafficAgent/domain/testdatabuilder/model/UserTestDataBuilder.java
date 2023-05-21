@@ -1,9 +1,12 @@
 package com.uco.TrafficAgent.domain.testdatabuilder.model;
 
-import com.uco.TrafficAgent.domain.dto.DtoUserSummary;
+import com.uco.TrafficAgent.domain.model.RolUser;
 import com.uco.TrafficAgent.domain.model.TypeIdentification;
 import com.uco.TrafficAgent.domain.model.User;
-import com.uco.TrafficAgent.domain.testdatabuilder.dto.DtoUserSummaryTestDataBuilder;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 public class UserTestDataBuilder {
     private String identification;
@@ -13,8 +16,12 @@ public class UserTestDataBuilder {
 
     private String email;
     private TypeIdentification typeIdentification;
+    private List<RolUser> roles;
+
 
     public UserTestDataBuilder byDefault() {
+        RolUser rol = new RolUserTestDataBuilder().byDefault().build();
+        List<RolUser> roles = Collections.singletonList(rol);
 
         this.identification = "1234567890";
         this.fullName = "Nombre";
@@ -22,6 +29,7 @@ public class UserTestDataBuilder {
         this.password = "w6Unpo<code>t0d0";
         this.email = "algo@email.com";
         this.typeIdentification = new TypeIdentificationTestDataBuilder().byDefault().build();
+        this.roles = roles;
         return this;
     }
 
@@ -56,6 +64,6 @@ public class UserTestDataBuilder {
     }
 
     public User build() {
-        return User.createUser(identification, fullName, cellphone, password, email, typeIdentification);
+        return User.createUser(identification, fullName, cellphone, password, email, typeIdentification, roles);
     }
 }

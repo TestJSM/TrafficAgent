@@ -2,6 +2,7 @@ package com.uco.TrafficAgent.application.mapper.user.impl;
 
 import com.uco.TrafficAgent.application.mapper.MapperApplicationObject;
 import com.uco.TrafficAgent.application.service.user.comand.dto.DtoSaveUser;
+import com.uco.TrafficAgent.domain.model.RolUser;
 import com.uco.TrafficAgent.domain.model.TypeIdentification;
 import com.uco.TrafficAgent.domain.model.User;
 import com.uco.TrafficAgent.domain.port.type.RepositoryTypeId;
@@ -19,7 +20,8 @@ public class MapperApplicationUserImpl implements MapperApplicationObject<DtoSav
     public User mapperDtoToDomain(DtoSaveUser dto) {
         return User.createUser(dto.getIdentification(), dto.getFullName(), dto.getCellphone(),
                 dto.getPassword(), dto.getEmail(),
-                this.repositoryTypeId.getType(dto.getType()));
+                this.repositoryTypeId.getType(dto.getType()),
+                dto.getRoles().stream().map(rol -> RolUser.of(rol.getRol())).toList());
     }
 
 }

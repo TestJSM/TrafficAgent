@@ -1,5 +1,7 @@
 package com.uco.TrafficAgent.domain.validator;
 
+import java.util.List;
+
 public class ValidatorAttributes {
 
     private static final String PATTERN = "^(?=.*\\d)(?=.*[\\u0021-\\u002b\\u003c-\\u0040])(?=.*[A-Z])(?=.*[a-z])\\S{8,16}";
@@ -12,6 +14,12 @@ public class ValidatorAttributes {
     public static void validateRequired(String valor, String message) {
         if(valor == null || valor.isBlank()) {
             throw new IllegalArgumentException(message);
+        }
+    }
+
+    public static void noEmpty(List<? extends Object> lista, String mensaje){
+        if(lista == null || lista.isEmpty()){
+            throw  new IllegalArgumentException(mensaje);
         }
     }
 

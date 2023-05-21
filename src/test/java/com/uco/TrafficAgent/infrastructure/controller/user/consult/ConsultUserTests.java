@@ -1,7 +1,10 @@
 package com.uco.TrafficAgent.infrastructure.controller.user.consult;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.uco.TrafficAgent.application.service.DtoResponse;
+import com.uco.TrafficAgent.application.service.login.dto.DtoLogin;
 import com.uco.TrafficAgent.domain.port.user.RepositoryUser;
+import com.uco.TrafficAgent.domain.testdatabuilder.DtoLoginTestDataBuilder;
 import com.uco.TrafficAgent.infrastructure.ApplicationMock;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -14,6 +17,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import static org.hamcrest.core.Is.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -37,8 +41,10 @@ class ConsultUserTests {
 
     @Test
     void consultAllUsers() throws  Exception{
+        String token = getToken();
         mocMvc.perform(get("/user/list/all")
-                .contentType(MediaType.APPLICATION_JSON))
+                .contentType(MediaType.APPLICATION_JSON)
+                        .header("Authorization",token))
                 .andExpect(status().is2xxSuccessful())
                 .andExpect(jsonPath("$[0].identification", is("123456789")))
                 .andExpect(jsonPath("$[0].fullName", is("Nomble 1")))
@@ -48,6 +54,17 @@ class ConsultUserTests {
                 .andExpect(jsonPath("$[1].fullName", is("Nomble 2")))
                 .andExpect(jsonPath("$[1].cellphone", is("345679098")))
                 .andExpect(jsonPath("$[1].typeIdentification.type", is("T.I")));
+    }
+
+    private String getToken() throws Exception {
+        DtoLogin login = new DtoLoginTestDataBuilder().byDefault().build();
+        var resultLogin = mocMvc.perform(MockMvcRequestBuilders.post("/user/login")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(login))
+                )
+                .andExpect(status().isOk())
+                .andReturn();
+        return (String) objectMapper.readValue(resultLogin.getResponse().getContentAsString(), DtoResponse.class).getValor();
     }
 
 }

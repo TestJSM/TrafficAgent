@@ -2,6 +2,7 @@ package com.uco.TrafficAgent.application.service.user.comand;
 
 import com.uco.TrafficAgent.application.encrypted.ServiceEncryptedPassword;
 import com.uco.TrafficAgent.application.service.user.comand.dto.DtoUpdateUser;
+import com.uco.TrafficAgent.domain.model.RolUser;
 import com.uco.TrafficAgent.domain.model.TypeIdentification;
 import com.uco.TrafficAgent.domain.port.type.RepositoryTypeId;
 import com.uco.TrafficAgent.domain.service.user.ServiceUpdateUser;
@@ -28,6 +29,6 @@ public class ServiceApplicationUpdateUser {
         TypeIdentification typeIdentification = this.repositoryTypeId.getType(dtoUpdateUser.getType());
         this.serviceUpdateUser.executeUpdate(id, dtoUpdateUser.getCellphone(),
                 dtoUpdateUser.getFullName(), dtoUpdateUser.getPassword(), dtoUpdateUser.getEmail(),
-                typeIdentification);
+                typeIdentification, dtoUpdateUser.getRoles().stream().map(rol -> RolUser.of(rol.getRol())).toList());
     }
 }

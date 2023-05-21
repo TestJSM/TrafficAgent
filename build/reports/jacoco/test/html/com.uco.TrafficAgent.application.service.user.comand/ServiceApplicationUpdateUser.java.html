@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ServiceApplicationUpdateUser.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TrafficAgent</a> &gt; <a href="index.source.html" class="el_package">com.uco.TrafficAgent.application.service.user.comand</a> &gt; <span class="el_source">ServiceApplicationUpdateUser.java</span></div><h1>ServiceApplicationUpdateUser.java</h1><pre class="source lang-java linenums">package com.uco.TrafficAgent.application.service.user.comand;
+
+import com.uco.TrafficAgent.application.encrypted.ServiceEncryptedPassword;
+import com.uco.TrafficAgent.application.service.user.comand.dto.DtoUpdateUser;
+import com.uco.TrafficAgent.domain.model.RolUser;
+import com.uco.TrafficAgent.domain.model.TypeIdentification;
+import com.uco.TrafficAgent.domain.port.type.RepositoryTypeId;
+import com.uco.TrafficAgent.domain.service.user.ServiceUpdateUser;
+import com.uco.TrafficAgent.domain.validator.ValidatorAttributes;
+import org.springframework.stereotype.Component;
+
+@Component
+public class ServiceApplicationUpdateUser {
+
+    private final ServiceUpdateUser serviceUpdateUser;
+    private final RepositoryTypeId repositoryTypeId;
+    private final ServiceEncryptedPassword serviceEncryptedPassword;
+
+<span class="fc" id="L19">    public ServiceApplicationUpdateUser(ServiceUpdateUser serviceUpdateUser, RepositoryTypeId repositoryTypeId, ServiceEncryptedPassword serviceEncryptedPassword) {</span>
+<span class="fc" id="L20">        this.serviceUpdateUser = serviceUpdateUser;</span>
+<span class="fc" id="L21">        this.repositoryTypeId = repositoryTypeId;</span>
+<span class="fc" id="L22">        this.serviceEncryptedPassword = serviceEncryptedPassword;</span>
+<span class="fc" id="L23">    }</span>
+    public void execute(String id, DtoUpdateUser dtoUpdateUser){
+<span class="fc" id="L25">        ValidatorAttributes.sizePassword(dtoUpdateUser.getPassword(), &quot;La contarseÃ±a no cumple con el tamaÃ±o requerido&quot;);</span>
+<span class="fc" id="L26">        ValidatorAttributes.specialCharactersPassword(dtoUpdateUser.getPassword(), &quot;La contarseÃ±a no es permitida&quot;);</span>
+<span class="fc" id="L27">        dtoUpdateUser.setPassword(this.serviceEncryptedPassword.execute(dtoUpdateUser.getPassword()));</span>
+
+<span class="fc" id="L29">        TypeIdentification typeIdentification = this.repositoryTypeId.getType(dtoUpdateUser.getType());</span>
+<span class="fc" id="L30">        this.serviceUpdateUser.executeUpdate(id, dtoUpdateUser.getCellphone(),</span>
+<span class="fc" id="L31">                dtoUpdateUser.getFullName(), dtoUpdateUser.getPassword(), dtoUpdateUser.getEmail(),</span>
+<span class="fc" id="L32">                typeIdentification, dtoUpdateUser.getRoles().stream().map(rol -&gt; RolUser.of(rol.getRol())).toList());</span>
+<span class="fc" id="L33">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

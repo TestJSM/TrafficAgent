@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ErrorHandler.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TrafficAgent</a> &gt; <a href="index.source.html" class="el_package">com.uco.TrafficAgent.infrastructure.error</a> &gt; <span class="el_source">ErrorHandler.java</span></div><h1>ErrorHandler.java</h1><pre class="source lang-java linenums">package com.uco.TrafficAgent.infrastructure.error;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import java.util.concurrent.ConcurrentHashMap;
+
+@ControllerAdvice
+public class ErrorHandler {
+<span class="fc" id="L13">    private static final Logger LOG = LoggerFactory.getLogger(ErrorHandler.class);</span>
+    private static final String ERROR_CONTACT_ADMIN = &quot;Error contact admin&quot;;
+<span class="fc" id="L15">    private static final ConcurrentHashMap&lt;String, Integer&gt; STATUS = new ConcurrentHashMap&lt;&gt;();</span>
+
+<span class="fc" id="L17">    public ErrorHandler() {</span>
+<span class="fc" id="L18">        STATUS.put(IllegalStateException.class.getSimpleName(), HttpStatus.NOT_FOUND.value());</span>
+<span class="fc" id="L19">        STATUS.put(IllegalArgumentException.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());</span>
+<span class="fc" id="L20">    }</span>
+
+    @ExceptionHandler(Exception.class)
+    public final ResponseEntity&lt;Error&gt; handler(Exception exception) {
+        ResponseEntity&lt;Error&gt; response;
+<span class="fc" id="L25">        String exceptionName = exception.getClass().getSimpleName();</span>
+<span class="fc" id="L26">        String message = exception.getMessage();</span>
+<span class="fc" id="L27">        Integer status = STATUS.get(exceptionName);</span>
+
+<span class="pc bpc" id="L29" title="1 of 2 branches missed.">        if (status != null) {</span>
+<span class="fc" id="L30">            Error error = new Error(exceptionName, message);</span>
+<span class="fc" id="L31">            response = new ResponseEntity&lt;&gt;(error, HttpStatus.valueOf(status));</span>
+<span class="fc" id="L32">        } else {</span>
+<span class="nc" id="L33">            LOG.error(exceptionName, message);</span>
+<span class="nc" id="L34">            Error error = new Error(exceptionName, ERROR_CONTACT_ADMIN);</span>
+<span class="nc" id="L35">            response = new ResponseEntity&lt;&gt;(error, HttpStatus.INTERNAL_SERVER_ERROR);</span>
+        }
+
+<span class="fc" id="L38">        return response;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

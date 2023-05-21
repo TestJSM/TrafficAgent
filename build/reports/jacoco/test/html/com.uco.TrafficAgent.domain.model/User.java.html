@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>User.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TrafficAgent</a> &gt; <a href="index.source.html" class="el_package">com.uco.TrafficAgent.domain.model</a> &gt; <span class="el_source">User.java</span></div><h1>User.java</h1><pre class="source lang-java linenums">package com.uco.TrafficAgent.domain.model;
+
+import com.uco.TrafficAgent.domain.validator.ValidatorAttributes;
+import com.uco.TrafficAgent.domain.validator.ValidatorObjects;
+import lombok.Getter;
+
+import java.util.List;
+
+@Getter
+public class User {
+<span class="fc" id="L11">    private final String identification;</span>
+<span class="fc" id="L12">    private final String fullName;</span>
+<span class="fc" id="L13">    private final String cellphone;</span>
+<span class="fc" id="L14">    private final String password;</span>
+
+<span class="fc" id="L16">    private final String email;</span>
+<span class="fc" id="L17">    private final TypeIdentification typeIdentification;</span>
+<span class="fc" id="L18">    private List&lt;RolUser&gt; roles;</span>
+
+    public static User createUser(String identification, String fullName, String cellphone, String password,
+                                  String email, TypeIdentification typeIdentification, List&lt;RolUser&gt; roles){
+<span class="fc" id="L22">        ValidatorAttributes.validateRequired(identification, &quot;La identifiaciÃ³n del usuraio no puede ser nula&quot;);</span>
+<span class="fc" id="L23">        ValidatorAttributes.validateRequired(fullName, &quot;El nombre del usuraio no puede ser nulo&quot;);</span>
+<span class="fc" id="L24">        ValidatorAttributes.validateRequired(cellphone, &quot;El celular del usuraio no puede ser nulo&quot;);</span>
+<span class="fc" id="L25">        ValidatorAttributes.validateRequired(password, &quot;La contraseÃ±a del usuraio no puede ser nulo&quot;);</span>
+<span class="fc" id="L26">        ValidatorAttributes.validateRequired(email, &quot;Un usuario debe tener un email asociado&quot;);</span>
+<span class="fc" id="L27">        ValidatorAttributes.stringContainNumbers(cellphone, &quot;El tefono tiene caracteres no soportados&quot;);</span>
+<span class="fc" id="L28">        ValidatorObjects.validator(typeIdentification, &quot;El tipo de identiicaciÃ³n no puede ser nula&quot;);</span>
+<span class="fc" id="L29">        ValidatorAttributes.stringContainNumbers(identification, &quot;La identificaciÃ³n tiene caracteres no soportados&quot;);</span>
+<span class="fc" id="L30">        ValidatorAttributes.noEmpty(roles, &quot;Un usuario debe tener al menos un rol&quot;);</span>
+<span class="fc" id="L31">        return new User(identification, fullName, cellphone, password, email, typeIdentification, roles);</span>
+    }
+
+    public User(String identification, String fullName, String cellphone, String password, String email,
+<span class="fc" id="L35">                TypeIdentification typeIdentification, List&lt;RolUser&gt; roles) {</span>
+<span class="fc" id="L36">        this.identification = identification;</span>
+<span class="fc" id="L37">        this.fullName = fullName;</span>
+<span class="fc" id="L38">        this.cellphone = cellphone;</span>
+<span class="fc" id="L39">        this.password = password;</span>
+<span class="fc" id="L40">        this.email = email;</span>
+<span class="fc" id="L41">        this.typeIdentification = typeIdentification;</span>
+<span class="fc" id="L42">        this.roles = roles;</span>
+<span class="fc" id="L43">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
