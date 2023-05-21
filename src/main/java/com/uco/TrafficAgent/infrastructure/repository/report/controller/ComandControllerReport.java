@@ -4,6 +4,7 @@ import com.uco.TrafficAgent.application.service.report.comand.ServiceApplication
 import com.uco.TrafficAgent.application.service.report.comand.dto.DtoSaveReport;
 import com.uco.TrafficAgent.application.service.user.comand.dto.DtoSaveUser;
 import com.uco.TrafficAgent.application.service.user.comand.dto.DtoUpdateUser;
+import com.uco.TrafficAgent.infrastructure.aspect.Secured;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +20,7 @@ public class ComandControllerReport {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/save")
+    @Secured(roles = {"Peaton", "Conductor"})
     public void saveReport(@RequestBody DtoSaveReport dtoSaveReport){
         this.serviceApplicationSaveReport.execute(dtoSaveReport);
     }

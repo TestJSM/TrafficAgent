@@ -34,8 +34,10 @@ class ServiceUpdateUserTest {
 
         ServiceUpdateUser serviceUpdateUser = new ServiceUpdateUser(repositoryUserUpdate);
 
-        serviceUpdateUser.executeUpdate(user.getIdentification(), userUpdate.getCellphone(), userUpdate.getFullName(),
-                userUpdate.getPassword(), userUpdate.getEmail(),userUpdate.getTypeIdentification());
+        serviceUpdateUser
+                .executeUpdate(user.getIdentification(), userUpdate.getCellphone(), userUpdate.getFullName(),
+                userUpdate.getPassword(), userUpdate.getEmail(),userUpdate.getTypeIdentification(),
+                        userUpdate.getRoles());
 
         Mockito.verify(repositoryUserUpdate, Mockito.times(1)).updateUser(refEq(userUpdate));
     }
@@ -59,7 +61,8 @@ class ServiceUpdateUserTest {
         Assertions.assertEquals("No hay ningún usuario con esa identificación", Assertions.assertThrows(
                         IllegalArgumentException.class,
                         ()-> serviceUpdateUser.executeUpdate(user.getIdentification(), userUpdate.getCellphone(), userUpdate.getFullName(),
-                                userUpdate.getPassword(), userUpdate.getEmail(),userUpdate.getTypeIdentification()))
+                                userUpdate.getPassword(), userUpdate.getEmail(),userUpdate.getTypeIdentification(),
+                                userUpdate.getRoles()))
                 .getMessage());
     }
 

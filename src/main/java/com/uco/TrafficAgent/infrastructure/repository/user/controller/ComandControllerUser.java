@@ -5,6 +5,7 @@ import com.uco.TrafficAgent.application.service.user.comand.ServiceApplicationSa
 import com.uco.TrafficAgent.application.service.user.comand.ServiceApplicationUpdateUser;
 import com.uco.TrafficAgent.application.service.user.comand.dto.DtoSaveUser;
 import com.uco.TrafficAgent.application.service.user.comand.dto.DtoUpdateUser;
+import com.uco.TrafficAgent.infrastructure.aspect.Secured;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,12 +31,14 @@ public class ComandControllerUser {
 
 
     @DeleteMapping("/delete/{id}")
+    @Secured(roles = {"Peaton", "Conductor"})
     public void deleteUser(@PathVariable String id){
         this.serviceApplicationDeleteUser.execute(id);
     }
 
 
     @PutMapping("/update")
+    @Secured(roles = {"Peaton", "Conductor"})
     public void updateUser(@RequestParam String id, @RequestBody DtoUpdateUser dtoUpdateUser){
         this.serviceApplicationUpdateUser.execute(id, dtoUpdateUser);
     }

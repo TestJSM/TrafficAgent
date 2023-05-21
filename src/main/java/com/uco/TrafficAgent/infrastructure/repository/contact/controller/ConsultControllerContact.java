@@ -3,6 +3,7 @@ package com.uco.TrafficAgent.infrastructure.repository.contact.controller;
 import com.uco.TrafficAgent.application.service.contact.consult.ServiceApplicationListAllByProximityContact;
 import com.uco.TrafficAgent.domain.dto.DtoContactSummary;
 import com.uco.TrafficAgent.domain.dto.DtoUserSummary;
+import com.uco.TrafficAgent.infrastructure.aspect.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,6 +20,7 @@ public class ConsultControllerContact {
 
 
     @GetMapping("/list/all/{id}")
+    @Secured(roles = {"Peaton", "Conductor"})
     public List<DtoContactSummary> listUser(@PathVariable String id,
             @RequestParam("latitud") double latitud,
             @RequestParam("longitud") double longitud){

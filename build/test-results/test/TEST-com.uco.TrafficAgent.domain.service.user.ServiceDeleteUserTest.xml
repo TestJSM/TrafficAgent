@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.uco.TrafficAgent.domain.service.user.ServiceDeleteUserTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-05-14T20:24:53" hostname="SANTIAGOP-CARDE" time="0.018">
+<testsuite name="com.uco.TrafficAgent.domain.service.user.ServiceDeleteUserTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-05-21T15:11:40" hostname="DESKTOP-7IOCUQU" time="0.117">
   <properties/>
-  <testcase name="deleteUserSuccessful()" classname="com.uco.TrafficAgent.domain.service.user.ServiceDeleteUserTest" time="0.017"/>
-  <testcase name="deleteUserNoSuccessful()" classname="com.uco.TrafficAgent.domain.service.user.ServiceDeleteUserTest" time="0.001"/>
+  <testcase name="deleteUserSuccessful()" classname="com.uco.TrafficAgent.domain.service.user.ServiceDeleteUserTest" time="0.11"/>
+  <testcase name="deleteUserNoSuccessful()" classname="com.uco.TrafficAgent.domain.service.user.ServiceDeleteUserTest" time="0.006"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -1,10 +1,12 @@
 package com.uco.TrafficAgent.infrastructure.repository.user.adapter.entity;
 
+import com.uco.TrafficAgent.infrastructure.repository.rol.adapter.entity.EntityRol;
 import com.uco.TrafficAgent.infrastructure.repository.type.adapter.entity.EntityTypeId;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -27,16 +29,20 @@ public class EntityUser {
     @JoinColumn(name = "type_identification")
     private EntityTypeId entityTypeId;
 
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name= "id_rol_user")
+    private List<EntityRol> roles;
+
     public EntityUser() {
     }
 
-    public EntityUser(String identification, String fullName, String cellphone, String password, String email,
-                      EntityTypeId entityTypeId) {
+    public EntityUser(String identification, String fullName, String cellphone, String password, String email, EntityTypeId entityTypeId, List<EntityRol> roles) {
         this.identification = identification;
         this.fullName = fullName;
         this.cellphone = cellphone;
         this.password = password;
         this.email = email;
         this.entityTypeId = entityTypeId;
+        this.roles = roles;
     }
 }

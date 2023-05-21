@@ -5,6 +5,7 @@ import com.uco.TrafficAgent.domain.model.TypeIdentification;
 import com.uco.TrafficAgent.domain.model.User;
 import com.uco.TrafficAgent.domain.port.user.RepositoryUser;
 import com.uco.TrafficAgent.infrastructure.mapper.user.impl.MapperUserImpl;
+import com.uco.TrafficAgent.infrastructure.repository.rol.adapter.entity.EntityRol;
 import com.uco.TrafficAgent.infrastructure.repository.type.adapter.entity.EntityTypeId;
 import com.uco.TrafficAgent.infrastructure.repository.type.adapter.repository.jpa.RepositoryTypeIdJpa;
 import com.uco.TrafficAgent.infrastructure.repository.user.adapter.entity.EntityUser;
@@ -12,6 +13,7 @@ import com.uco.TrafficAgent.infrastructure.repository.user.adapter.repository.jp
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 public class RepositoryUserDB implements RepositoryUser {
@@ -30,14 +32,15 @@ public class RepositoryUserDB implements RepositoryUser {
         List<EntityUser> entities = this.repositoryUserJpa.findAll();
         return entities.stream().map(entity -> new DtoUserSummary(entity.getIdentification(),
                 entity.getFullName(), entity.getCellphone(),
-                TypeIdentification.creationType(entity.getEntityTypeId().getType()))).toList();
+                TypeIdentification.creationType(entity.getEntityTypeId().getType()))).collect(Collectors.toList());
     }
 
     @Override
     public void saveUser(User user) {
         EntityTypeId entityTypeId = this.repositoryTypeIdJpa.findByType(user.getTypeIdentification().getType());
         EntityUser entityUser = new EntityUser(user.getIdentification(), user.getFullName(),
-                user.getCellphone(), user.getPassword(), user.getEmail(), entityTypeId);
+                user.getCellphone(), user.getPassword(), user.getEmail(), entityTypeId,
+                user.getRoles().stream().map(rol -> new EntityRol(rol.getRol())).collect(Collectors.toList()));
 
         this.repositoryUserJpa.save(entityUser);
     }
@@ -59,6 +62,7 @@ public class RepositoryUserDB implements RepositoryUser {
         entityUser.setPassword(user.getPassword());
         entityUser.setEmail(user.getEmail());
         entityUser.setEntityTypeId(entityTypeId);
+        entityUser.setRoles(user.getRoles().stream().map(rol -> new EntityRol(rol.getRol())).toList());
 
         this.repositoryUserJpa.save(entityUser);
     }
