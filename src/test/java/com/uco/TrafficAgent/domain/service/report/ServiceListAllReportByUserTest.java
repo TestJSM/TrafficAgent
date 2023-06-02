@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import javax.mail.MessagingException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ import static org.mockito.Mockito.when;
 public class ServiceListAllReportByUserTest {
 
     @Test
-    void findReportsSuccessfulByDate(){
+    void findReportsSuccessfulByDate() throws MessagingException {
         Report report = new ReportTestDataBuilder().byDefault().withDate(LocalDateTime.parse("2023-05-14T10:30")).build();
         DtoReportSummary dtoUno = new DtoReportSummary(report.getLatitud(), report.getLongitud(),
                 report.getDescription(), report.getUrl(), report.getUser().getIdentification(),
@@ -47,7 +48,7 @@ public class ServiceListAllReportByUserTest {
     }
 
     @Test
-    void noFindReport(){
+    void noFindReport() throws MessagingException {
         Report report = new ReportTestDataBuilder().byDefault().build();
         List<DtoReportSummary> list = new ArrayList<>();
 

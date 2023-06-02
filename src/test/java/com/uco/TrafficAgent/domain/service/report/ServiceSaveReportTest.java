@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import javax.mail.MessagingException;
 import java.time.LocalDateTime;
 
 import static org.mockito.Mockito.when;
@@ -18,7 +19,7 @@ import static org.mockito.Mockito.when;
 class ServiceSaveReportTest {
 
     @Test
-    void createUserSuccessful() {
+    void createUserSuccessful() throws MessagingException {
         Report report = new ReportTestDataBuilder().byDefault().withDate(LocalDateTime.parse("2023-05-14T10:30")).build();
 
         RepositoryReport repositoryReport = Mockito.mock(RepositoryReport.class);

@@ -3,16 +3,18 @@
 import com.uco.TrafficAgent.domain.model.Report;
 import com.uco.TrafficAgent.domain.port.report.RepositoryReport;
 
+import javax.mail.MessagingException;
+
 public class ServiceSaveReport {
 
     private final RepositoryReport repositoryReport;
 
-<span class="fc" id="L10">    public ServiceSaveReport(RepositoryReport repositoryReport) {</span>
-<span class="fc" id="L11">        this.repositoryReport = repositoryReport;</span>
-<span class="fc" id="L12">    }</span>
+<span class="fc" id="L12">    public ServiceSaveReport(RepositoryReport repositoryReport) {</span>
+<span class="fc" id="L13">        this.repositoryReport = repositoryReport;</span>
+<span class="fc" id="L14">    }</span>
 
-    public void executeSave(Report report){
-<span class="fc" id="L15">        this.repositoryReport.saveReport(report);</span>
-<span class="fc" id="L16">    }</span>
+    public void executeSave(Report report) throws MessagingException {
+<span class="fc" id="L17">        this.repositoryReport.saveReport(report);</span>
+<span class="fc" id="L18">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

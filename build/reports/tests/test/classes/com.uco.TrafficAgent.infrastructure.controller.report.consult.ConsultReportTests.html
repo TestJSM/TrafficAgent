@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.467s</div>
+<div class="counter">0.299s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,22 +79,22 @@
 </thead>
 <tr>
 <td class="success">consultAllEmptyByDate()</td>
-<td class="success">0.048s</td>
+<td class="success">0.064s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">consultAllEmptyByUser()</td>
-<td class="success">0.205s</td>
+<td class="success">0.050s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">consultAllReportByDate()</td>
-<td class="success">0.117s</td>
+<td class="success">0.119s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">consultAllReportByUser()</td>
-<td class="success">0.097s</td>
+<td class="success">0.066s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -102,9 +102,9 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2023-05-23 21:08:47.083  INFO 21908 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.uco.TrafficAgent.infrastructure.controller.report.consult.ConsultReportTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-2023-05-23 21:08:47.089  INFO 21908 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2023-05-23 21:08:47.089  INFO 21908 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@cc793c8, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7bd3cb86, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@49dd4f8e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@735c3fa2, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@4335bbd2, org.springframework.test.context.support.DirtiesContextTestExecutionListener@265fc7c9, org.springframework.test.context.transaction.TransactionalTestExecutionListener@55d4db3, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@176ec395, org.springframework.test.context.event.EventPublishingTestExecutionListener@796b1181, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2152f0ea, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4e8d11a6, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2f1e1189, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@ed8eaf2, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@38bb9e63, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1e1da8f3]
+<pre>2023-06-02 15:51:59.381  INFO 8552 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.uco.TrafficAgent.infrastructure.controller.report.consult.ConsultReportTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2023-06-02 15:51:59.387  INFO 8552 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2023-06-02 15:51:59.388  INFO 8552 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@273ca7cc, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1f7553b4, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6b0680b8, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1b38c6f2, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@59f8009e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ca500e6, org.springframework.test.context.transaction.TransactionalTestExecutionListener@33794e8a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6eab0141, org.springframework.test.context.event.EventPublishingTestExecutionListener@774e00fa, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@33a89cc5, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4adc8924, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7c4b2837, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7b05be94, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@c3c4b85, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2207768f]
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -114,25 +114,26 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v2.6.3)
 
-2023-05-23 21:08:47.146  INFO 21908 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : Starting ConsultReportTests using Java 17 on DESKTOP-7IOCUQU with PID 21908 (started by Usuario in C:\Users\Usuario\Desktop\TrafficAgent)
-2023-05-23 21:08:47.146  INFO 21908 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : The following profiles are active: test
-2023-05-23 21:08:47.967  INFO 21908 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-05-23 21:08:48.425  INFO 21908 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 456 ms. Found 5 JPA repository interfaces.
-2023-05-23 21:08:48.937  INFO 21908 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-05-23 21:08:48.992  INFO 21908 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
-2023-05-23 21:08:48.994  INFO 21908 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
-2023-05-23 21:08:48.994  INFO 21908 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2023-05-23 21:08:49.295  INFO 21908 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-05-23 21:08:49.295  INFO 21908 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-05-23 21:08:50.509  WARN 21908 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-05-23 21:08:51.384  INFO 21908 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-05-23 21:08:51.384  INFO 21908 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-05-23 21:08:51.385  INFO 21908 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-05-23 21:08:51.397  INFO 21908 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : Started ConsultReportTests in 4.305 seconds (JVM running for 109.952)
-2023-05-23 21:08:51.446  INFO 21908 --- [    Test worker] c.u.T.i.aspect.LogExecutionAspect        : DtoResponse com.uco.TrafficAgent.infrastructure.repository.login.controller.ComandControllerLogin.login(DtoLogin) executed in 25ms
-2023-05-23 21:08:51.521  INFO 21908 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-05-23 21:08:51.522  INFO 21908 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
-2023-05-23 21:08:51.525  INFO 21908 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2023-06-02 15:51:59.436  INFO 8552 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : Starting ConsultReportTests using Java 17.0.7 on DESKTOP-7IOCUQU with PID 8552 (started by Usuario in C:\Users\Usuario\Desktop\TrafficAgent)
+2023-06-02 15:51:59.436  INFO 8552 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : The following profiles are active: test
+2023-06-02 15:51:59.875  INFO 8552 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-02 15:51:59.983  INFO 8552 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 107 ms. Found 5 JPA repository interfaces.
+2023-06-02 15:52:00.322  INFO 8552 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-02 15:52:00.336  INFO 8552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2023-06-02 15:52:00.338  INFO 8552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2023-06-02 15:52:00.339  INFO 8552 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-06-02 15:52:00.520  INFO 8552 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-02 15:52:00.520  INFO 8552 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-02 15:52:01.409  WARN 8552 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-02 15:52:01.573  INFO 8552 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-06-02 15:52:02.077  INFO 8552 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-06-02 15:52:02.077  INFO 8552 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-06-02 15:52:02.078  INFO 8552 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-06-02 15:52:02.089  INFO 8552 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : Started ConsultReportTests in 2.697 seconds (JVM running for 47.423)
+2023-06-02 15:52:02.116  INFO 8552 --- [    Test worker] c.u.T.i.aspect.LogExecutionAspect        : DtoResponse com.uco.TrafficAgent.infrastructure.repository.login.controller.ComandControllerLogin.login(DtoLogin) executed in 13ms
+2023-06-02 15:52:02.209  INFO 8552 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-02 15:52:02.210  INFO 8552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2023-06-02 15:52:02.213  INFO 8552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -142,25 +143,26 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v2.6.3)
 
-2023-05-23 21:08:51.612  INFO 21908 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : Starting ConsultReportTests using Java 17 on DESKTOP-7IOCUQU with PID 21908 (started by Usuario in C:\Users\Usuario\Desktop\TrafficAgent)
-2023-05-23 21:08:51.613  INFO 21908 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : The following profiles are active: test
-2023-05-23 21:08:52.183  INFO 21908 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-05-23 21:08:52.325  INFO 21908 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 141 ms. Found 5 JPA repository interfaces.
-2023-05-23 21:08:52.741  INFO 21908 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-05-23 21:08:52.755  INFO 21908 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
-2023-05-23 21:08:52.758  INFO 21908 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
-2023-05-23 21:08:52.758  INFO 21908 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2023-05-23 21:08:52.948  INFO 21908 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-05-23 21:08:52.949  INFO 21908 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-05-23 21:08:53.918  WARN 21908 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-05-23 21:08:54.549  INFO 21908 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-05-23 21:08:54.549  INFO 21908 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-05-23 21:08:54.551  INFO 21908 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-05-23 21:08:54.570  INFO 21908 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : Started ConsultReportTests in 3.041 seconds (JVM running for 113.125)
-2023-05-23 21:08:54.634  INFO 21908 --- [    Test worker] c.u.T.i.aspect.LogExecutionAspect        : DtoResponse com.uco.TrafficAgent.infrastructure.repository.login.controller.ComandControllerLogin.login(DtoLogin) executed in 26ms
-2023-05-23 21:08:54.681  INFO 21908 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-05-23 21:08:54.682  INFO 21908 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
-2023-05-23 21:08:54.687  INFO 21908 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2023-06-02 15:52:02.263  INFO 8552 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : Starting ConsultReportTests using Java 17.0.7 on DESKTOP-7IOCUQU with PID 8552 (started by Usuario in C:\Users\Usuario\Desktop\TrafficAgent)
+2023-06-02 15:52:02.263  INFO 8552 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : The following profiles are active: test
+2023-06-02 15:52:02.673  INFO 8552 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-02 15:52:02.761  INFO 8552 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 86 ms. Found 5 JPA repository interfaces.
+2023-06-02 15:52:03.198  INFO 8552 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-02 15:52:03.217  INFO 8552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2023-06-02 15:52:03.219  INFO 8552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2023-06-02 15:52:03.220  INFO 8552 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-06-02 15:52:03.368  INFO 8552 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-02 15:52:03.369  INFO 8552 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-02 15:52:04.280  WARN 8552 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-02 15:52:04.439  INFO 8552 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-06-02 15:52:04.859  INFO 8552 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-06-02 15:52:04.861  INFO 8552 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-06-02 15:52:04.863  INFO 8552 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-06-02 15:52:04.877  INFO 8552 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : Started ConsultReportTests in 2.661 seconds (JVM running for 50.211)
+2023-06-02 15:52:04.905  INFO 8552 --- [    Test worker] c.u.T.i.aspect.LogExecutionAspect        : DtoResponse com.uco.TrafficAgent.infrastructure.repository.login.controller.ComandControllerLogin.login(DtoLogin) executed in 13ms
+2023-06-02 15:52:04.948  INFO 8552 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-02 15:52:04.948  INFO 8552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2023-06-02 15:52:04.950  INFO 8552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -170,25 +172,26 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v2.6.3)
 
-2023-05-23 21:08:54.740  INFO 21908 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : Starting ConsultReportTests using Java 17 on DESKTOP-7IOCUQU with PID 21908 (started by Usuario in C:\Users\Usuario\Desktop\TrafficAgent)
-2023-05-23 21:08:54.741  INFO 21908 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : The following profiles are active: test
-2023-05-23 21:08:55.362  INFO 21908 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-05-23 21:08:55.523  INFO 21908 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 160 ms. Found 5 JPA repository interfaces.
-2023-05-23 21:08:56.085  INFO 21908 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-05-23 21:08:56.097  INFO 21908 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
-2023-05-23 21:08:56.099  INFO 21908 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
-2023-05-23 21:08:56.099  INFO 21908 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2023-05-23 21:08:56.333  INFO 21908 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-05-23 21:08:56.335  INFO 21908 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-05-23 21:08:57.195  WARN 21908 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-05-23 21:08:57.679  INFO 21908 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-05-23 21:08:57.679  INFO 21908 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-05-23 21:08:57.681  INFO 21908 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
-2023-05-23 21:08:57.699  INFO 21908 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : Started ConsultReportTests in 3.009 seconds (JVM running for 116.253)
-2023-05-23 21:08:57.730  INFO 21908 --- [    Test worker] c.u.T.i.aspect.LogExecutionAspect        : DtoResponse com.uco.TrafficAgent.infrastructure.repository.login.controller.ComandControllerLogin.login(DtoLogin) executed in 11ms
-2023-05-23 21:08:57.754  INFO 21908 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-05-23 21:08:57.755  INFO 21908 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
-2023-05-23 21:08:57.757  INFO 21908 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+2023-06-02 15:52:04.993  INFO 8552 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : Starting ConsultReportTests using Java 17.0.7 on DESKTOP-7IOCUQU with PID 8552 (started by Usuario in C:\Users\Usuario\Desktop\TrafficAgent)
+2023-06-02 15:52:04.994  INFO 8552 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : The following profiles are active: test
+2023-06-02 15:52:05.441  INFO 8552 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-02 15:52:05.540  INFO 8552 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 99 ms. Found 5 JPA repository interfaces.
+2023-06-02 15:52:05.857  INFO 8552 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-02 15:52:05.878  INFO 8552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2023-06-02 15:52:05.879  INFO 8552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2023-06-02 15:52:05.880  INFO 8552 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-06-02 15:52:06.082  INFO 8552 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-02 15:52:06.082  INFO 8552 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-02 15:52:06.964  WARN 8552 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-02 15:52:07.158  INFO 8552 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-06-02 15:52:07.590  INFO 8552 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-06-02 15:52:07.590  INFO 8552 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-06-02 15:52:07.591  INFO 8552 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-06-02 15:52:07.604  INFO 8552 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : Started ConsultReportTests in 2.652 seconds (JVM running for 52.939)
+2023-06-02 15:52:07.636  INFO 8552 --- [    Test worker] c.u.T.i.aspect.LogExecutionAspect        : DtoResponse com.uco.TrafficAgent.infrastructure.repository.login.controller.ComandControllerLogin.login(DtoLogin) executed in 15ms
+2023-06-02 15:52:07.674  INFO 8552 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-02 15:52:07.674  INFO 8552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2023-06-02 15:52:07.676  INFO 8552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -198,25 +201,26 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v2.6.3)
 
-2023-05-23 21:08:57.807  INFO 21908 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : Starting ConsultReportTests using Java 17 on DESKTOP-7IOCUQU with PID 21908 (started by Usuario in C:\Users\Usuario\Desktop\TrafficAgent)
-2023-05-23 21:08:57.807  INFO 21908 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : The following profiles are active: test
-2023-05-23 21:08:58.506  INFO 21908 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-05-23 21:08:58.677  INFO 21908 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 169 ms. Found 5 JPA repository interfaces.
-2023-05-23 21:08:59.099  INFO 21908 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-05-23 21:08:59.116  INFO 21908 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Starting...
-2023-05-23 21:08:59.118  INFO 21908 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Start completed.
-2023-05-23 21:08:59.120  INFO 21908 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2023-05-23 21:08:59.364  INFO 21908 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-05-23 21:08:59.364  INFO 21908 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-05-23 21:09:00.452  WARN 21908 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-05-23 21:09:01.148  INFO 21908 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-05-23 21:09:01.148  INFO 21908 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-05-23 21:09:01.149  INFO 21908 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-05-23 21:09:01.163  INFO 21908 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : Started ConsultReportTests in 3.403 seconds (JVM running for 119.717)
-2023-05-23 21:09:01.239  INFO 21908 --- [    Test worker] c.u.T.i.aspect.LogExecutionAspect        : DtoResponse com.uco.TrafficAgent.infrastructure.repository.login.controller.ComandControllerLogin.login(DtoLogin) executed in 30ms
-2023-05-23 21:09:01.333  INFO 21908 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-05-23 21:09:01.333  INFO 21908 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
-2023-05-23 21:09:01.379  INFO 21908 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
+2023-06-02 15:52:07.726  INFO 8552 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : Starting ConsultReportTests using Java 17.0.7 on DESKTOP-7IOCUQU with PID 8552 (started by Usuario in C:\Users\Usuario\Desktop\TrafficAgent)
+2023-06-02 15:52:07.726  INFO 8552 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : The following profiles are active: test
+2023-06-02 15:52:08.145  INFO 8552 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-02 15:52:08.247  INFO 8552 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 102 ms. Found 5 JPA repository interfaces.
+2023-06-02 15:52:08.604  INFO 8552 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-02 15:52:08.617  INFO 8552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2023-06-02 15:52:08.618  INFO 8552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2023-06-02 15:52:08.619  INFO 8552 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-06-02 15:52:08.787  INFO 8552 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-02 15:52:08.787  INFO 8552 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-02 15:52:09.655  WARN 8552 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-02 15:52:09.856  INFO 8552 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-06-02 15:52:10.289  INFO 8552 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-06-02 15:52:10.289  INFO 8552 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-06-02 15:52:10.290  INFO 8552 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-06-02 15:52:10.302  INFO 8552 --- [    Test worker] c.u.T.i.c.r.consult.ConsultReportTests   : Started ConsultReportTests in 2.623 seconds (JVM running for 55.637)
+2023-06-02 15:52:10.327  INFO 8552 --- [    Test worker] c.u.T.i.aspect.LogExecutionAspect        : DtoResponse com.uco.TrafficAgent.infrastructure.repository.login.controller.ComandControllerLogin.login(DtoLogin) executed in 11ms
+2023-06-02 15:52:10.355  INFO 8552 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-02 15:52:10.356  INFO 8552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2023-06-02 15:52:10.358  INFO 8552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
 </pre>
 </span>
 </div>
@@ -228,7 +232,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.6.1</a> at 23/05/2023, 9:09:36 p. m.</p>
+<a href="http://www.gradle.org">Gradle 7.6.1</a> at 2/06/2023, 3:52:37 p. m.</p>
 </div>
 </div>
 </body>

@@ -8,6 +8,8 @@ import com.uco.TrafficAgent.infrastructure.aspect.Secured;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.mail.MessagingException;
+
 @RestController
 @RequestMapping("/report")
 public class ComandControllerReport {
@@ -21,7 +23,7 @@ public class ComandControllerReport {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/save")
     @Secured(roles = {"Peaton", "Conductor"})
-    public void saveReport(@RequestBody DtoSaveReport dtoSaveReport){
+    public void saveReport(@RequestBody DtoSaveReport dtoSaveReport) throws MessagingException {
         this.serviceApplicationSaveReport.execute(dtoSaveReport);
     }
 

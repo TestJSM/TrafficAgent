@@ -5,6 +5,8 @@ import com.uco.TrafficAgent.application.service.report.comand.dto.DtoSaveReport;
 import com.uco.TrafficAgent.domain.service.report.ServiceSaveReport;
 import org.springframework.stereotype.Component;
 
+import javax.mail.MessagingException;
+
 @Component
 public class ServiceApplicationSaveReport {
 
@@ -16,7 +18,7 @@ public class ServiceApplicationSaveReport {
         this.mapperApplicationReport = mapperApplicationReport;
     }
 
-    public void execute(DtoSaveReport dto){
+    public void execute(DtoSaveReport dto) throws MessagingException {
         this.serviceSaveReport.executeSave(this.mapperApplicationReport.mapperDtoToDomain(dto));
     }
 }

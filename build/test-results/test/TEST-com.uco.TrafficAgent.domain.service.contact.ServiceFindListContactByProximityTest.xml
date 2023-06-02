@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.uco.TrafficAgent.domain.service.contact.ServiceFindListContactByProximityTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-05-24T02:07:42" hostname="DESKTOP-7IOCUQU" time="3.226">
+<testsuite name="com.uco.TrafficAgent.domain.service.contact.ServiceFindListContactByProximityTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-06-02T20:51:31" hostname="DESKTOP-7IOCUQU" time="1.529">
   <properties/>
-  <testcase name="noFindContact()" classname="com.uco.TrafficAgent.domain.service.contact.ServiceFindListContactByProximityTest" time="3.219"/>
-  <testcase name="findContactSuccessful()" classname="com.uco.TrafficAgent.domain.service.contact.ServiceFindListContactByProximityTest" time="0.007"/>
+  <testcase name="noFindContact()" classname="com.uco.TrafficAgent.domain.service.contact.ServiceFindListContactByProximityTest" time="1.523"/>
+  <testcase name="findContactSuccessful()" classname="com.uco.TrafficAgent.domain.service.contact.ServiceFindListContactByProximityTest" time="0.006"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

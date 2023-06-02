@@ -8,22 +8,24 @@ import com.uco.TrafficAgent.infrastructure.aspect.Secured;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.mail.MessagingException;
+
 @RestController
 @RequestMapping(&quot;/report&quot;)
 public class ComandControllerReport {
 
     private final ServiceApplicationSaveReport serviceApplicationSaveReport;
 
-<span class="fc" id="L17">    public ComandControllerReport(ServiceApplicationSaveReport serviceApplicationSaveReport) {</span>
-<span class="fc" id="L18">        this.serviceApplicationSaveReport = serviceApplicationSaveReport;</span>
-<span class="fc" id="L19">    }</span>
+<span class="fc" id="L19">    public ComandControllerReport(ServiceApplicationSaveReport serviceApplicationSaveReport) {</span>
+<span class="fc" id="L20">        this.serviceApplicationSaveReport = serviceApplicationSaveReport;</span>
+<span class="fc" id="L21">    }</span>
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(&quot;/save&quot;)
     @Secured(roles = {&quot;Peaton&quot;, &quot;Conductor&quot;})
-    public void saveReport(@RequestBody DtoSaveReport dtoSaveReport){
-<span class="fc" id="L25">        this.serviceApplicationSaveReport.execute(dtoSaveReport);</span>
-<span class="fc" id="L26">    }</span>
+    public void saveReport(@RequestBody DtoSaveReport dtoSaveReport) throws MessagingException {
+<span class="nc" id="L27">        this.serviceApplicationSaveReport.execute(dtoSaveReport);</span>
+<span class="nc" id="L28">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
